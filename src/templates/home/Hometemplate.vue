@@ -1,32 +1,15 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <div v-on:click="ativarMenu"><i class="fas fa-bars"></i></div>
-            </div>
+        <nav-bar-home>
             
-        </nav>
-        <transition name="custom-classes-transition"
-    enter-active-class="animated tada"
-    leave-active-class="animated bounceOutRight">
-            <div v-if="menuAtivado" class="menuTotal">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center text-white middlevertical">
-                            <li><router-link to="/">Home</router-link>   </li>
-                            <li><router-link to="/">Contato</router-link></li>
-                            <li><router-link to="/">Portfolio</router-link></li>
-                            <li><router-link to="/">Sobre</router-link></li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </transition>
+        </nav-bar-home>
+        
     </div>
 </template>
 
 <script>
+import navBarHome from '@/components/menu/Menuhome'
+
 export default {
 name:'Hometemplate',
     data: function () {
@@ -38,6 +21,9 @@ name:'Hometemplate',
         ativarMenu(){
             this.menuAtivado = !this.menuAtivado
         }
+    },
+    components:{
+        navBarHome
     }
 }
 </script>

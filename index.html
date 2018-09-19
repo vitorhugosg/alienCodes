@@ -25,16 +25,47 @@
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
           if (file.match(/\.(js|css)$/)) { %>
+            <!-- css start -->
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+
+    
+    
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/slick.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
   </head>
   <body>
     <noscript>
       This is your fallback content in case JavaScript fails to load.
     </noscript>
-    <div id="app"></div>
+    <div id="ip-container">
+      <div id="app"></div>
+    </div>
+    
     <!-- Todo: only include in production -->
     <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
     <!-- built files will be auto injected -->
+    <script type="text/javascript" src="/static/js/slick.min.js"></script>
+    <script type="text/javascript" src="/static/js/isotope.pkgd.js"></script>
+    <script type="text/javascript" src="/static/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/js/isotope-docs.min.js?3"></script>
+    <script type="text/javascript" src="/static/js/jquery.easing.min.js"></script>    
+    <script type="text/javascript" src="/static/js/modernizr.custom.js"></script> 
+    <script type="text/javascript" src="/static/js/classie.js"></script>
+    <script type="text/javascript" src="/static/js/pathLoader.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script> 
+    <script type="text/javascript" src="/static/js/jquery.unveilEffects.js"></script>     
+    <script type="text/javascript" src="/static/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/static/js/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/static/js/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/static/js/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/static/js/owkey.js"></script>
+    <script type="text/javascript" src="/static/js/owkey-rev-slider.js"></script>
   </body>
 </html>

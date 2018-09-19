@@ -1,0 +1,22 @@
+/*PARA DEIXAR AS IMAGENS DOS CLIENTES COM DIV REDONDA:*/
+
+/*.mils-slide img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	object-fit: cover;
+
+}
+.mils-slide img.active{
+	background: linear-gradient(to right,#f93030 1%,#fc572a 100%);
+}*/
+
+.meet-our-team .team-slider .slick-list {
+    padding: 4px 0px 22px 0px;
+}
+
+.pro-bars .progress .progress-percent span {
+    padding: 3px 0px 5px
+
+}
