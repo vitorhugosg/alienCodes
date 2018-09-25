@@ -1,0 +1,48 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from '@/pages/home/Home'
+import Sobre from '@/pages/sobre/Sobre'
+import Servicos from '@/pages/servicos/Servicos'
+import Contato from '@/pages/contato/Contato'
+import Portfolio from '@/pages/portfolio/Portfolio'
+import PortfolioPage from '@/pages/portfolio-page/PortfolioPage'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  routes: [
+
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/Sobre',
+      name: 'Sobre',
+      component: Sobre
+    },
+    {
+      path: '/Servicos',
+      name: 'Servicos',
+      component: Servicos
+    },
+    {
+      path: '/portfolio',
+      name: 'Portfolio',
+      component: Portfolio
+    },
+    {
+      path: '/Contato',
+      name: 'Contato',
+      component: Contato
+    },
+    {
+      path: '/portfolio/:id/ver',
+      name: 'PortfolioPage',
+      component: PortfolioPage
+    }
+    
+  ]
+})
