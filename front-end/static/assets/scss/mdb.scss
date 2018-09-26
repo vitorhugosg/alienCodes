@@ -1,6 +1,6 @@
 /*!
  * Material Design for Bootstrap 4
- * Version: MDB PRO 4.5.9
+ * Version: MDB Admin Dashboard Pack 4.5.9
  *
  *
  * Copyright: Material Design for Bootstrap
@@ -72,8 +72,8 @@
 @import "pro/social-buttons";
 @import "pro/tabs";
 @import "pro/cards-basic";
-@import "pro/cards-extended";
 @import "pro/dropdowns";
+@import "pro/depreciated";
 @import "pro/navbars";
 @import "pro/scrollspy";
 @import "pro/lightbox";
@@ -89,11 +89,9 @@
 @import "pro/input-group";
 @import "pro/autocomplete";
 @import "pro/accordion-basic";
-@import "pro/accordion-extended";
 @import "pro/parallax";
 @import "pro/sidenav";
 @import "pro/ecommerce";
-@import "pro/carousels";
 @import "pro/steppers";
 @import "pro/blog";
 @import "pro/toasts";
@@ -101,11 +99,9 @@
 @import "pro/charts";
 @import "pro/progress";
 @import "pro/scrollbar";
-@import "pro/megamenu";
 // Your custom skin
 @import "custom-skin";
 @import "pro/skins";
-@import "pro/depreciated";
 
 // Picker
 @import "pro/picker/default";
@@ -114,12 +110,13 @@
 
 // Sections
 @import "pro/sections/templates";
-@import "pro/sections/social";
 @import "pro/sections/team";
 @import "pro/sections/testimonials";
-@import "pro/sections/magazine";
 @import "pro/sections/pricing";
 @import "pro/sections/contacts";
+
+// Admin styles
+@import "admin/style";
 
 // Your custom styles
 @import "custom-styles";

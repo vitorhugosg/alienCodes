@@ -1,6 +1,6 @@
 /*!
  * Material Design for Bootstrap 4
- * Version: MDB PRO 4.5.9
+ * Version: MDB Admin Dashboard 4.5.9
  *
  *
  * Copyright: Material Design for Bootstrap
@@ -28,39 +28,36 @@
 
 /*
 
-  jquery.easing.js
-  velocity.min.js
-  chart.js
-  wow.js
-  scrolling-navbar.js
-  waves.js
-  forms-free.js
-  preloading.js
-  cards.js
-  character-counter.js
-  toastr.js
-  smooth-scroll.js
-  dropdown.js
-  buttons.js
-  hammer.js
-  jquery.hammer.js
-  sidenav.js
-  collapsible.js
-  jquery.easypiechart.js
-  range-input.js
-  file-input.js
-  material-select.js
-  picker.js
-  picker-date.js
-  picker-time.js
-  lightbox.js
-  jquery.sticky.js
-  scrollbar.js
-  chips.js
-  jarallax.js
-  jarallax-video.js
-  mdb-autocomplete.js
-  enhanced-modals.js
+jquery.easing.js
+velocity.min.js
+chart.js
+wow.js
+scrolling-navbar.js
+waves.js
+forms-free.js
+cards.js
+smooth-scroll.js
+toastr.js
+dropdown.js
+buttons.js
+hammer.js
+jquery.hammer.js
+sidenav.js
+collapsible.js
+jquery.easypiechart.js
+file-input.js
+material-select.js
+picker.js
+picker-date.js
+picker-time.js
+lightbox.js
+jquery.sticky.js
+scrollbar.js
+chips.js
+jarallax.js
+jarallax-video.js
+mdb-autocomplete.js
+
 
 */
 
@@ -15683,21 +15680,6 @@ Waves.init();
 })(jQuery);
 'use strict';
 
-$(document).ready(function () {
-
-  $('body').attr('aria-busy', true);
-
-  $('#preloader-markup').load('mdb-addons/preloader.html', function () {
-
-    $(window).on('load', function () {
-
-      $('#mdb-preloader').fadeOut('slow');
-      $('body').removeAttr('aria-busy');
-    });
-  });
-});
-'use strict';
-
 (function ($) {
 
   $(document).on('click.card', '.card', function (e) {
@@ -15733,68 +15715,6 @@ $(document).ready(function () {
     e.preventDefault();
 
     $(this).toggleClass('share-expanded').parent().find('div').toggleClass('social-reveal-active');
-  });
-})(jQuery);
-'use strict';
-
-(function ($) {
-
-  $.fn.characterCounter = function () {
-
-    return this.each(function () {
-
-      var itHasLengthAttribute = $(this).attr('length') !== undefined;
-
-      if (itHasLengthAttribute) {
-
-        $(this).on('input', updateCounter);
-        $(this).on('focus', updateCounter);
-        $(this).on('blur', removeCounterElement);
-
-        addCounterElement($(this));
-      }
-    });
-  };
-
-  function updateCounter() {
-
-    var maxLength = Number($(this).attr('length'));
-    var actualLength = Number($(this).val().length);
-    var isValidLength = actualLength <= maxLength;
-
-    $(this).parent().find('span[class="character-counter"]').html(actualLength + '/' + maxLength);
-
-    addInputStyle(isValidLength, $(this));
-  }
-
-  function addCounterElement($input) {
-
-    var $counterElement = $('<span/>').addClass('character-counter').css('float', 'right').css('font-size', '12px').css('height', 1);
-
-    $input.parent().append($counterElement);
-  }
-
-  function removeCounterElement() {
-
-    $(this).parent().find('span[class="character-counter"]').html('');
-  }
-
-  function addInputStyle(isValidLength, $input) {
-
-    var inputHasInvalidClass = $input.hasClass('invalid');
-    if (isValidLength && inputHasInvalidClass) {
-
-      $input.removeClass('invalid');
-    } else if (!isValidLength && !inputHasInvalidClass) {
-
-      $input.removeClass('valid');
-      $input.addClass('invalid');
-    }
-  }
-
-  $(document).ready(function () {
-
-    $('input, textarea').characterCounter();
   });
 })(jQuery);
 /*
@@ -20335,156 +20255,6 @@ $.fn.easyPieChart = function(options) {
 
 }));
 
-'use strict';
-
-(function ($) {
-
-  var rangeWrapper = '.range-field';
-  var rangeType = 'input[type=range]';
-  var thumbHtml = '<span class="thumb"><span class="value"></span></span>';
-  var rangeMousedown = false;
-  var left = void 0;
-
-  var addThumb = function addThumb() {
-
-    var $thumb = $(thumbHtml);
-    $(rangeType).after($thumb);
-  };
-
-  $(document).on('change', rangeType, function () {
-
-    var $thumb = $(this);
-    var $thumbValue = $thumb.siblings('.thumb').find('.value');
-    $thumbValue.html($thumb.val());
-  });
-
-  $(document).on('input mousedown touchstart', rangeType, function (e) {
-
-    var $this = $(this);
-    var $thumb = $this.siblings('.thumb');
-    var width = $this.outerWidth();
-    var noThumb = !$thumb.length;
-
-    if (noThumb) {
-
-      addThumb();
-    }
-
-    // Set indicator value
-    $thumb.find('.value').html($this.val());
-
-    rangeMousedown = true;
-    $this.addClass('active');
-
-    if (!$thumb.hasClass('active')) {
-
-      $thumb.velocity({
-        height: '30px',
-        width: '30px',
-        top: '-20px',
-        marginLeft: '-15px'
-      }, {
-        duration: 300,
-        easing: 'easeOutExpo'
-      });
-    }
-
-    if (e.type !== 'input') {
-
-      var isMobile = e.pageX === undefined || e.pageX === null;
-      if (isMobile) {
-
-        left = e.originalEvent.touches[0].pageX - $(this).offset().left;
-      } else {
-
-        left = e.pageX - $(this).offset().left;
-      }
-
-      if (left < 0) {
-
-        left = 0;
-      } else if (left > width) {
-
-        left = width;
-      }
-
-      $thumb.addClass('active').css('left', left);
-    }
-
-    $thumb.find('.value').html($this.val());
-  });
-
-  $(document).on('mouseup touchend', rangeWrapper, function () {
-
-    rangeMousedown = false;
-    $(this).removeClass('active');
-  });
-
-  $(document).on('mousemove touchmove', rangeWrapper, function (e) {
-
-    var $thumb = $(this).children('.thumb');
-    var left = void 0;
-
-    if (rangeMousedown) {
-
-      if (!$thumb.hasClass('active')) {
-
-        $thumb.velocity({
-          height: '30px',
-          width: '30px',
-          top: '-20px',
-          marginLeft: '-15px'
-        }, {
-          duration: 300,
-          easing: 'easeOutExpo'
-        });
-      }
-
-      var isMobile = e.pageX === undefined || e.pageX === null;
-      if (isMobile) {
-
-        left = e.originalEvent.touches[0].pageX - $(this).offset().left;
-      } else {
-
-        left = e.pageX - $(this).offset().left;
-      }
-
-      var width = $(this).outerWidth();
-      if (left < 0) {
-
-        left = 0;
-      } else if (left > width) {
-
-        left = width;
-      }
-
-      $thumb.addClass('active').css('left', left);
-      $thumb.find('.value').html($thumb.siblings(rangeType).val());
-    }
-  });
-
-  $(document).on('mouseout touchleave', rangeWrapper, function () {
-
-    if (!rangeMousedown) {
-
-      var $thumb = $(this).children('.thumb');
-
-      if ($thumb.hasClass('active')) {
-
-        $thumb.velocity({
-          height: '0',
-          width: '0',
-          top: '10px',
-          marginLeft: '-6px'
-        }, {
-          duration: 100
-        });
-      }
-
-      $thumb.removeClass('active');
-    }
-  });
-})(jQuery);
 'use strict';
 
 (function ($) {
