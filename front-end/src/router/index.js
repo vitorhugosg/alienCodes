@@ -8,6 +8,7 @@ import Portfolio from '@/pages/portfolio/Portfolio'
 import PortfolioPage from '@/pages/portfolio-page/PortfolioPage'
 import Login from '@/pages/login/login'
 import Dashboard from '@/pages/dashboard/Dashboard'
+import PortfolioDashboard from '@/pages/dashboard/PortfolioDashboard'
 Vue.use(Router)
 
 export default new Router({
@@ -54,6 +55,10 @@ export default new Router({
       name: 'Dashboard',
       component: Dashboard
     },
-    
+    {
+      path: '/dashboard/portfolio',
+      name: 'PortfolioDashboard',
+      component: PortfolioDashboard
+    },
   ]
 })

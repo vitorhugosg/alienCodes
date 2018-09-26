@@ -1,6 +1,6 @@
 <template>
     <!--Footer-->
-    <footer class="page-footer pt-0 mt-5">
+    <footer id="dashfooter" class="page-footer pt-0 mt-5">
 
         <!--Copyright-->
         <div class="footer-copyright py-3 text-center">
@@ -20,6 +20,12 @@
     };
 </script>
 <style scoped>
-
+#dashfooter{
+    margin-top: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 </style>
 

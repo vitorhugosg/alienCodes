@@ -17,12 +17,8 @@
                 <ul class="collapsible collapsible-accordion">
                     
                     <!-- Simple link -->
-                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Alerts</router-link></li>
-                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Alerts</router-link></li>
-                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Alerts</router-link></li>
-                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Alerts</router-link></li>
-                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Alerts</router-link></li>
-                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Alerts</router-link></li>
+                    <li><router-link to="/dashboard/" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Home</router-link></li>
+                    <li><router-link to="/dashboard/portfolio" class="collapsible-header waves-effect"><i class="fa fa-bell-o"></i> Portfolio</router-link></li>
                 </ul>
             </li>
             <!--/. Side navigation links -->
