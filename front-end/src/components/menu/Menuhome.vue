@@ -1,10 +1,11 @@
 <template>
 	<!--Navbar-->
 	<div>
-		<nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+		<nav class="navbar navbar-expand-lg fixed-top border-none">
 			<div class="container">
 				<a class="navbar-brand d-flex justify-content-start" href="#">
 					<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
+					
 				</a>
 				<div class="collapse navbar-collapse" id="navbarText">
 					<ul class="navbar-nav mr-auto">
@@ -20,10 +21,10 @@
 			enter-active-class="animated zoomIn"
 			leave-active-class="animated zoomOut"
 		>
-			<div class="menuTotal animated zoomIn" style="background-image: url('/static/assets/images/imagens/BANNERS-MENU.jpg')">
+			<div class="menuTotal animated zoomIn" style="background-image: url('/static/assets/images/BANNERS-MENU.jpg')">
 				<div class="container">
 					<div class="row">
-						<nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+						<nav class="navbar navbar-expand-lg fixed-top border-none">
 							<div class="container">
 								<a class="navbar-brand d-flex justify-content-start" href="#">
 									<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
@@ -37,6 +38,34 @@
 								</div>
 							</div>
 						</nav>
+						
+					</div>
+					<div class="row pt-5">
+						<div id="" class="col-md-12 text-center pt-5">
+							<div v-on:click="ativarMenuTotalClickMenu()" class='pt-5'>
+									<ul>
+										<li class="nav-menu p-3">
+											<router-link to="/" class="">Home</router-link>
+										</li>
+									
+										<li class="nav-menu p-3">
+											<router-link to="/sobre" class="">Sobre</router-link>
+										</li>
+									
+										<li class="nav-menu p-3">
+											<router-link to="/servicos" class="">Serviços</router-link>
+										</li>
+									
+										<li class="nav-menu p-3">
+											<router-link to="/portfolio" class="">Portfólio</router-link>
+										</li>
+									
+										<li class="nav-menu p-3">
+											<router-link to="/contato" class="">Contato</router-link>
+										</li>
+									</ul>						
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
@@ -59,6 +88,11 @@ name:'Menuhome',
 	methods:{
 		ativarMenuTotal(){
 			this.menuAtivado = !this.menuAtivado;
+		},
+		ativarMenuTotalClickMenu(){
+			setTimeout(function(){
+				this.menuAtivado = !this.menuAtivado;
+			},300);
 		}
 	}
 }
@@ -73,8 +107,25 @@ name:'Menuhome',
 		left: 0;
 		bottom: 0;
 		background-position: center center;
-		background-size: cover;
+		background-size: cover;	
+
 	}
 	
+	.navbar{
+		box-shadow: none !important;
+	}
+	.nav-menu{
+		display: inline-block;
+		text-transform: uppercase;
+    	font-weight: 500;
+    	letter-spacing: .1em;
+		font-size: 20px;
+	}
+	.nav-menu a{
+		color: #fff;
+	}
+	.nav-menu a:hover {
+		border-bottom: 5px dotted #fff; 
+	}
    
 </style>

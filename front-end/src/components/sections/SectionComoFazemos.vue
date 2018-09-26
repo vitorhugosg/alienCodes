@@ -1,5 +1,5 @@
 <template>
-  <section class="py-5">
+  <section class="py-5 cor-section">
       <div class="container">
           <div class="row">
               <div class="col-md-6 col-sm-12">
@@ -30,5 +30,9 @@ export default {
 
 <style scoped>
 
+.cor-section {
+    background-color: #282A2D;
+    color:white;
+}
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section id="sectionSkills" class=" py-5 ">
+    <section id="sectionSkills " class=" py-5 cor-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 text-center">
@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .skillsValue{
     height: auto;
     width: 100%;
@@ -75,5 +75,10 @@ export default {
     background-position: center top;
     background-color: #F7F7F7;
     padding: 155px 0 67px;
+}
+
+.cor-section {
+    background-color:#1B1D20;
+    color:white;
 }
 </style>

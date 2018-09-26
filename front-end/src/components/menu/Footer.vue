@@ -50,7 +50,7 @@
 
       </div>
       <!-- Grid row-->
-      <hr class="rgba-white-light" style="margin: 0 15%;">
+      <hr class="rgba-dark" style="margin: 0 15%;">
 
       <!-- Grid row-->
       <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
@@ -112,8 +112,8 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="https://aliencodes.com.br"> aliencodes.com.br</a>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright - 
+      <a href="https://aliencodes.com.br">aliencodes.com.br</a>
     </div>
     <!-- Copyright -->
 
@@ -125,6 +125,12 @@ export default {
   name: 'FooterVue'
 }
 </script>
-<style scoped>
 
+<style scoped>
+  .footer-copyright{
+      background-image: linear-gradient(#7873F5,  #FF6EC4); 
+  }
+  .indigo {
+         background-image: linear-gradient(#1B1D20,  #282A2D); 
+  }
 </style>
