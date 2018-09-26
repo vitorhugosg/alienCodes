@@ -5,6 +5,7 @@
 			<div class="container">
 				<a class="navbar-brand d-flex justify-content-start" href="#">
 					<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
+					
 				</a>
 				<div class="collapse navbar-collapse" id="navbarText">
 					<ul class="navbar-nav mr-auto">
@@ -37,6 +38,32 @@
 								</div>
 							</div>
 						</nav>
+						
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul>
+								<li>
+									eaeae
+								</li>
+								<li>
+									eaea2
+								</li>
+								<li>
+									eaea23
+								</li>
+								<li>
+									eaeaeae232
+								</li>
+								<li>
+									eaeaeae232
+								</li>
+								<li>
+									aeaeae232
+								</li>
+							</ul>
+						</div>
+						
 					</div>
 				</div>
 			</div>
