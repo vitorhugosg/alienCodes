@@ -51,11 +51,11 @@
   <div id="app"></div>
 
 
-  <!-- Todo: only include in production -->
-  <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
 
     <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4947038.js"></script>
+    <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4947038.js"></script> -->
     <!-- End of HubSpot Embed Code -->
     <!-- built files will be auto injected -->
     <script type="text/javascript" src="/static/assets/js/jquery-3.3.1.min.js"></script>
@@ -65,9 +65,19 @@
     <script type="text/javascript" src="/static/assets/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="/static/assets/js/mdb.min.js"></script>
-    <script>
+    <script type="text/javascript">
       new WOW().init();
-
+      var setIntervalTimer = true;
+      setInterval(() => {
+        if($(".button-collapse").length > 0 && setIntervalTimer){
+          $(".button-collapse").sideNav();
+          // SideNav Scrollbar Initialization
+          var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+          Ps.initialize(sideNavScrollbar);
+        }
+        
+      } ,100);
+      
     </script>
 
 </body>

@@ -6,7 +6,8 @@ import Servicos from '@/pages/servicos/Servicos'
 import Contato from '@/pages/contato/Contato'
 import Portfolio from '@/pages/portfolio/Portfolio'
 import PortfolioPage from '@/pages/portfolio-page/PortfolioPage'
-
+import Login from '@/pages/login/login'
+import Dashboard from '@/pages/dashboard/Dashboard'
 Vue.use(Router)
 
 export default new Router({
@@ -42,7 +43,17 @@ export default new Router({
       path: '/portfolio/:id/ver',
       name: 'PortfolioPage',
       component: PortfolioPage
-    }
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
+    },
     
   ]
 })

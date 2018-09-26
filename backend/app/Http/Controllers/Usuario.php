@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,8 @@ class Usuario extends Controller
     }
 
     public function cadastro(Request $request){
-    	$data = $request->all();
+		$data = $request->all();
+		
 	    //validando informações!
 	    $validacao = Validator::make($data, [
 	            'name' => 'required|string|max:255',
