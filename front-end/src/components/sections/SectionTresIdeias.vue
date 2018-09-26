@@ -1,6 +1,6 @@
 <template>
 
-  <section class="py-5">
+  <section class="py-5 cor-section">
       <div class="container">
           <div class="row text-center">
               <div class="col-md-4 col-sm-12 wow animated fadeInDown" data-wow-delay="0.2s">
@@ -29,7 +29,13 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style  scoped>
+
+.cor-section {
+    background-color:#1B1D20;
+    color:white;
+}
+
 
 
 </style>

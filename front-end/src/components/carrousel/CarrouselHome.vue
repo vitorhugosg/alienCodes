@@ -15,7 +15,7 @@
                     
                 </div>
                 <div class="carousel-caption">
-                    <h1 class="h1-responsive">ALIEN CODES</h1>
+                    <h1 class="h1-responsive">ALIENCODES</h1>
                     <h3 class="h3-responsive">Desenvolvendo sites e sistemas de outro mundo!</h3>
                     
                 </div>

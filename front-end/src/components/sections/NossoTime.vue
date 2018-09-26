@@ -1,7 +1,10 @@
 <template>
 
   <!-- Section: Team v.4 -->
-    <section class="container pb-5">
+    <section class="cor-section">
+        <div class="container pb-5">
+
+       
         <div class="row">
             <div class="col-md-12">
                 <!-- Section heading -->
@@ -20,7 +23,8 @@
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Bianca Carlsen</h5>
                     <p class="text-uppercase blue-text"><strong>Bianca Carlsen</strong></p>
-                    <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci  sed quia non numquam modi tempora eius.</p>
+                    <p class="grey-text">
+"Olá, eu serei responsável por desenhar seu projeto. Prepare-se para alavancar seu negócio com uma interface diferenciada".</p>
                     <ul class="list-unstyled mb-0">
                         <!-- Facebook -->
                         <a class="p-2 fa-lg fb-ic">
@@ -45,7 +49,9 @@
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3">Vitor Hugo</h5>
                     <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
-                    <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa accusantium doloremque rem laudantium totam aperiam.</p>
+                    <p class="grey-text">“Olá, eu sou a pessoa que irá desenvolver o código do seu projeto. Pode contar comigo, porque missão dada é missão cumprida!“
+
+</p>
                     <ul class="list-unstyled mb-0">
                         <!-- Facebook -->
                         <a class="p-2 fa-lg fb-ic">
@@ -112,7 +118,7 @@
     
         </div>
 
-
+     </div>
     </section>
     <!-- Section: Team v.4 -->
   
@@ -139,4 +145,10 @@ export default {
     margin: 0 auto;
     display: inline-block;
 }
+
+.cor-section {
+    background-color: #282A2D;
+    color:white;
+}
+
 </style>

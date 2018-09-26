@@ -12,6 +12,11 @@ export default {
 </script>
 
 <style>
+
+body {
+ 
+}
+
 .background-title {
   font-size: 24px;
   background: -webkit-linear-gradient(
@@ -27,9 +32,8 @@ export default {
   font-weight: 500;
 }
 .titulo {
-  background-image: url(/static/assets/images/title-bg.png);
+
   background-repeat: no-repeat;
-  padding: 40px 0;
   color: #f93069;
   font-size: 24px;
   text-align: center;

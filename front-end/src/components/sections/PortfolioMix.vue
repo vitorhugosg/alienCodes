@@ -1,6 +1,6 @@
 <template>
 
-  <section>
+  <section class="cor-section">
       <div class="container-fluid py-5">
           <div class="row">
               <div class="col-md-12 text-center pb-5 titulo">
@@ -113,6 +113,10 @@ export default {
 
 <style scoped>
 
+.cor-section {
+    background-color: #1B1D20;
+    color:white;
+}
 
 
 </style>
