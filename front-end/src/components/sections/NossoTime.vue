@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <!-- Section heading -->
                 <div class="row">
-                    <div class="col-md-12 text-center pb-5 titulo">
+                    <div class="col-md-12 text-center  titulo">
                         <h2 class="background-title">QUEM FAZ PARTE </h2>
                     </div>
                 </div>

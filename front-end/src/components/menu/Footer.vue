@@ -127,8 +127,10 @@ export default {
 </script>
 
 <style scoped>
-
+  .footer-copyright{
+      background-image: linear-gradient(#7873F5,  #FF6EC4); 
+  }
   .indigo {
-     background-image: linear-gradient( #4DF0D9, #009069)!important;
+         background-image: linear-gradient(#1B1D20,  #282A2D); 
   }
 </style>

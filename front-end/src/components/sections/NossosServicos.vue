@@ -3,14 +3,14 @@
   <section class="py-5 cor-section">
       <div class="container">
           <div class="row">
-              <div class="col-md-12 text-center pb-5 titulo">
+              <div class="col-md-12 text-center titulo">
                   <h2 class="background-title">NOSSOS SERVIÇOS</h2>
               </div>
           </div>
           <div class="row text-center">
               <div class="col-md-4 py-2">
                   <img src="/static/assets/images/marketing-strategies-home-3.png" alt="ms">
-                  <h5 class='py-5'>
+                  <h5 class='py-2'>
                       ESTRATÉGIA DE MARKETING
                   </h5>
                   <p>
@@ -19,7 +19,7 @@
               </div>
               <div class="col-md-4 py-2">
                   <img src="/static/assets/images/search-engine-optimiztation-home-3.png" alt="ms">
-                  <h5 class='py-5'>
+                  <h5 class='py-2'>
                       ESTRATÉGIA DE MARKETING
                   </h5>
                   <p>
@@ -28,7 +28,7 @@
               </div>
               <div class="col-md-4 py-2">
                   <img src="/static/assets/images/keyword-research-home-3.png" alt="ms">
-                  <h5 class='py-5'>
+                  <h5 class='py-2'>
                       ESTRATÉGIA DE MARKETING
                   </h5>
                   <p>
@@ -37,7 +37,7 @@
               </div>
               <div class="col-md-4 py-2">
                   <img src="/static/assets/images/statistic-analysis-home-3.png" alt="ms">
-                  <h5 class='py-5'>
+                  <h5 class='py-2'>
                       ESTRATÉGIA DE MARKETING
                   </h5>
                   <p>
@@ -46,7 +46,7 @@
               </div>
               <div class="col-md-4 py-2">
                   <img src="/static/assets/images/traffic-booster-home-3.png" alt="ms">
-                  <h5 class='py-5'>
+                  <h5 class='py-2'>
                       ESTRATÉGIA DE MARKETING
                   </h5>
                   <p>
@@ -55,7 +55,7 @@
               </div>
               <div class="col-md-4 py-2">
                   <img src="/static/assets/images/creative-options-home-3.png" alt="ms">
-                  <h5 class='py-5'>
+                  <h5 class='py-2'>
                       ESTRATÉGIA DE MARKETING
                   </h5>
                   <p>

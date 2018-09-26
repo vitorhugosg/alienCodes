@@ -21,10 +21,8 @@ body {
   font-size: 24px;
   background: -webkit-linear-gradient(
     left,
-    #f93069 0,
-    #f93051 49%,
-    #ec471a 50%,
-    #ec471a 100%
+    #009069 0%,
+    #4DF0D9 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
