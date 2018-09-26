@@ -16,7 +16,7 @@ class Usuario extends Controller
 	    $data = $request->all();
 	    //validando informações!
 	    $validacao = Validator::make($data, [
-	            'email' => 'required|string|email|max:255',
+	            'email' => 'required|string|email|max:150',
 	            'password' => 'required|string',
 	        ]);
 	    //verificando se tem erros
