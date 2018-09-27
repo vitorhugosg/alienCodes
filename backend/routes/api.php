@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,7 @@ use Illuminate\Http\Request;
 Route::post('/usuario/login','Usuario@login');
 //ROTA DE CADASTRO
 Route::post('/usuario/cadastro','Usuario@cadastro');
+
+Route::post('/portfolio/add', 'PortfolioController@adicionarPortfolio');
+
+Route::get('/portfolio/getcategorias', 'PortfolioController@getCategorias');

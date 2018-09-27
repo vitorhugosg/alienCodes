@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d587cfddb43b67d104a9a21568d2468",
+    "content-hash": "8adc1fab7b8e712f6b78c6de68ab19da",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -2989,6 +2989,47 @@
             "time": "2017-11-27T11:13:29+00:00"
         },
         {
+            "name": "verot/class.upload.php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verot/class.upload.php.git",
+                "reference": "7c7ff6764b7f9cc5c9fe695b886807f6c360892e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verot/class.upload.php/zipball/7c7ff6764b7f9cc5c9fe695b886807f6c360892e",
+                "reference": "7c7ff6764b7f9cc5c9fe695b886807f6c360892e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/class.upload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Verot",
+                    "email": "colin@verot.net"
+                }
+            ],
+            "description": "This PHP class uploads files and manipulates images very easily.",
+            "homepage": "http://www.verot.net/php_class_upload.htm",
+            "keywords": [
+                "gd",
+                "upload"
+            ],
+            "time": "2018-08-30T13:17:39+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.5.1",
             "source": {
@@ -4864,7 +4905,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "verot/class.upload.php": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

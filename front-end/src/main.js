@@ -34,6 +34,7 @@ var store = {
     }
   }
 }
+
 Vue.use(Vuex)
 
 Vue.config.productionTip = false
