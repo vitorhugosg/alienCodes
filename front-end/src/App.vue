@@ -18,7 +18,7 @@ body {
 }
 
 .background-title {
-  font-size: 24px;
+  font-size: 30px;
   background: -webkit-linear-gradient(
     left,
     #009069 0%,
@@ -26,7 +26,7 @@ body {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 3.1px;
+  letter-spacing: 2.1px;
   font-weight: 500;
 }
 .titulo {
@@ -36,6 +36,6 @@ body {
   font-size: 24px;
   text-align: center;
   background-position: center;
-  margin: 69px 0;
+  margin-bottom: 50px;
 }
 </style>

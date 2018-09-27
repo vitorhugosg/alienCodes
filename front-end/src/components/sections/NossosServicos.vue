@@ -9,57 +9,57 @@
           </div>
           <div class="row text-center">
               <div class="col-md-4 py-2">
-                  <img src="/static/assets/images/marketing-strategies-home-3.png" alt="ms">
+                  <img class="pb-2" src="/static/assets/images/marketing-strategies-home-3.png" alt="ms">
                   <h5 class='py-2'>
-                      ESTRATÉGIA DE MARKETING
+                      Estratégia de Marketing
                   </h5>
-                  <p>
+                  <p class="grey-text">
                      Nós da <b>AlienCodes</b> temos a expertise de descifrar o seu negócio, identificando a persona do seu produto e/ou serviço, a fim de obter resultados nunca vistos antes. Tudo isso com grande volume de contéudo e um target certeiro. 
                   </p>
               </div>
               <div class="col-md-4 py-2">
-                  <img src="/static/assets/images/search-engine-optimiztation-home-3.png" alt="ms">
+                  <img class="pb-2" src="/static/assets/images/search-engine-optimiztation-home-3.png" alt="ms">
                   <h5 class='py-2'>
-                      ESTRATÉGIA DE MARKETING
+                      Search Engine Optimiztation
                   </h5>
-                  <p>
+                  <p class="grey-text">
                     O SEO é uma técnica primordial para seu negócio. Se você quer ter seu site bem qualificado e seus contéudos de fácil acesso nos mecanismos de busca, conte com nossos serviços de SEO Expert. 
                   </p>
               </div>
               <div class="col-md-4 py-2">
-                  <img src="/static/assets/images/keyword-research-home-3.png" alt="ms">
+                  <img class="pb-2" src="/static/assets/images/keyword-research-home-3.png" alt="ms">
                   <h5 class='py-2'>
-                      ESTRATÉGIA DE MARKETING
+                      UI/UX Design
                   </h5>
-                  <p>
+                  <p class="grey-text">
                      Com o UI Design, a interface de seu site se tornará mais atraente e amigável. Porém, beleza não é tudo! Seu site deve ser funcional. Nós fazemos o trabalho completo utilizando também o UX Design para garantir uma excelente experiência para seu usuário.
                   </p>
               </div>
               <div class="col-md-4 py-2">
-                  <img src="/static/assets/images/statistic-analysis-home-3.png" alt="ms">
+                  <img class="pb-2" src="/static/assets/images/statistic-analysis-home-3.png" alt="ms">
                   <h5 class='py-2'>
-                      ESTRATÉGIA DE MARKETING
+                      Sites, Sistemas e APP's
                   </h5>
-                  <p>
+                  <p class="grey-text">
                      O nosso objetivo é dar vida para seu projeto. Seja ele um Aplicativo, um Site ou um Sistema. Criaremos a sua idéia da melhor forma, utilizando o nosso conhecimento Alien!
                   </p>
               </div>
               <div class="col-md-4 py-2">
-                  <img src="/static/assets/images/traffic-booster-home-3.png" alt="ms">
+                  <img class="pb-2" src="/static/assets/images/traffic-booster-home-3.png" alt="ms">
                   <h5 class='py-2'>
-                      ESTRATÉGIA DE MARKETING
+                      Features e Soluções
                   </h5>
-                  <p>
+                  <p class="grey-text">
                      A <b>AlienCodes</b>  trabalha com o intuito de resolver os seus problemas. Se você precisa aumentar as funcionalidades de seu site ou até mesmo desenvolver soluções ideais para suas demandas, entre em contato com a gente!
                   </p>
               </div>
               <div class="col-md-4 py-2">
-                  <img src="/static/assets/images/creative-options-home-3.png" alt="ms">
+                  <img class="pb-2" src="/static/assets/images/creative-options-home-3.png" alt="ms">
                   <h5 class='py-2'>
-                      ESTRATÉGIA DE MARKETING
+                      Opções Criativas
                   </h5>
-                  <p>
-                     Com criatividade e imaginação, nós iremos destacar seu site/sistema para chamar a atenção de seus clientes e atrair ainda mais visitantes. A <b>AlienCodes</b>  possibilitará que sua empresa tenha aquela interface eficiente e formidável que você sempre sonhou.
+                  <p class="grey-text">
+                     Com criatividade e imaginação, nós iremos destacar seu site/sistema para chamar a atenção de seus clientes e atrair ainda mais visitantes. A <b>AlienCodes</b>  possibilitará que você tenha aquela interface eficiente e formidável que sempre sonhou.
                   </p>
               </div>
           </div>

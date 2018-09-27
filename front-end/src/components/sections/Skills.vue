@@ -1,30 +1,30 @@
 <template>
-    <section id="sectionSkills " class=" py-5 cor-section">
+    <section id="" class="sectionSkills py-5 cor-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 text-center">
                     <div class="skillsValue d-flex justify-content-center">
                         
                     </div>
-                    <h5 class="py-4">MARKETING SOCIAL</h5>
+                    <h5 class="py-4 space-text"><strong> MARKETING SOCIAL</strong></h5>
                 </div>
                 <div class="col-md-3 text-center">
                     <div class="skillsValue d-flex justify-content-center">
                         
                     </div>
-                    <h5 class="py-4">WEB DESIGN</h5>
+                    <h5 class="py-4 space-text"><strong>WEB DESIGN</strong></h5>
                 </div>
                 <div class="col-md-3 text-center">
                     <div class="skillsValue d-flex justify-content-center">
                         
                     </div>
-                    <h5 class="py-4">UI/UX DESIGN</h5>
+                    <h5 class="py-4 space-text"><strong> UI/UX DESIGN</strong></h5>
                 </div>
                 <div class="col-md-3 text-center">
                     <div class="skillsValue d-flex justify-content-center">
                         
                     </div>
-                    <h5 class="py-4">DESENVOLVIMENTO WEB</h5>
+                    <h5 class="py-4 space-text"><strong>DESENVOLVIMENTO WEB</strong> </h5>
                 </div>
             </div>
         </div>
@@ -45,14 +45,14 @@ export default {
         var numberRound = Math.floor(Math.random() * 101);
         numberRound = '0.' + numberRound;
         var bar = new ProgressBar.Circle(divs[i], {
-            color: '#FFEA82',
+            color: '#4DF0D9',
             trailColor: '#eee',
             trailWidth: 1,
             duration: 1400,
             easing: 'bounce',
             strokeWidth: 6,
-            from: {color: '#FFEA82', a:0},
-            to: {color: '#ED6A5A', a:1},
+            from: {color: '#4DF0D9', a:0},
+            to: {color: '#009069', a:1},
             // Set default step function for all animate calls
             step: function(state, circle) {
                 circle.path.setAttribute('stroke', state.color);
@@ -69,16 +69,20 @@ export default {
     height: auto;
     width: 100%;
 }
-#sectionSkills{
-    background-image: url(/static/assets/images/skill2.png);
+.sectionSkills{
+    background-image: url(/static/assets/images/skill3.png) !important;
     background-repeat: no-repeat;
-    background-position: center top;
-    background-color: #F7F7F7;
-    padding: 155px 0 67px;
+    background-position: center ;
+    /* background-color: #F7F7F7; */
+    /* padding: 155px 0 67px; */
 }
 
 .cor-section {
     background-color:#1B1D20;
     color:white;
+}
+
+.space-text {
+    letter-spacing: 1px;;
 }
 </style>
