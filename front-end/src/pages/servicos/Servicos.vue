@@ -3,7 +3,7 @@
         <nav-bar-home>
 
         </nav-bar-home>
-        <header-secundario titulo="Servicos" backgroundImage="/static/assets/images/imagens/banner-servicos2.jpg">
+        <header-secundario titulo="Serviços" backgroundImage="/static/assets/images/imagens/banner-servicos3.jpg">
         </header-secundario>
         <nossos-servicos>
 

@@ -1,24 +1,25 @@
 <template>
 
-  <section class="py-5">
+  <section class="py-5 cor-section">
       <div class="container">
-          <div class="row">
-              <div class="col-md-6">
-                  <h3>Nossa Agência de Aliens</h3>
-                  <h5 class="secondary-text">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor pmmodo consequat.</h5>
-                  <p>
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                  </p>
-                  <p>
-                      At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                  </p>
+          <div class="row" style="margin: 0px 50px 0px 50px;">
+              <div class="col-md-12" >
+                <h3>Nossa Agência de Aliens</h3>
+                
+                <p class="grey-text">
+                    Nossa agência é formada por quatro integrantes que possuem um conhecimento alien de desenvolvimento web!
+                    Temos o intuito de fomentar a economia criativa desenvolvendo sites, sistemas e aplicativos de forma 
+                    interativa e amigável.
+                </p>
+
+                <p class="grey-text">
+                    Nós da AlienCodes, queremos proporcionar o acesso ao conhecimento por meio da navegação web, 
+                    tornando-a ainda mais prazerosa de utilizar. Desejamos dar vida para projetos moralvemente viáveis que irão contribuir
+                    de alguma forma para humanidade.
+                </p>
+                  
               </div>
-              <div class="col-md-6">
-                  <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                  <p>
-                      Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-                  </p>
-              </div>
+             
           </div>
       </div>
   </section>
@@ -31,7 +32,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.cor-section {
+    background-color: #1B1D20;
+    color:#fff;
+}
 
 
 </style>
