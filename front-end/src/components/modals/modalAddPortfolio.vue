@@ -36,7 +36,10 @@
 <script>
     import Editor from '@tinymce/tinymce-vue'
     export default{
-        name: 'modalAddPortfolio'
+        name: 'modalAddPortfolio',
+        components:{
+            Editor
+        }
     }
 </script>
 <style scoped>
