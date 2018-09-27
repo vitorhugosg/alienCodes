@@ -1,6 +1,6 @@
 <template>
 
-    <section class="testimonials py-5">
+    <section class="testimonials py-5 cor-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center titulo">
@@ -24,14 +24,14 @@
                             <p>
                                 <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore cum accusamus eveniet molestias voluptatum inventore laboriosam labore sit, aspernatur praesentium iste impedit quidem dolor veniam.
                             </p>
-                            <h4 class="font-weight-bold">Anna Deynah</h4>
-                            <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
+                            <h4 class="font-weight-bold deixando-verde space-text">Anna Deynah</h4>
+                            <h6 class="font-weight-bold my-3 space-text">Founder at ET Company</h6>
                             
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star-half-full blue-text"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star-o deixando-verde"> </i>
                             </div>
                         </div>
                         
@@ -44,14 +44,14 @@
                             
                             <p>
                                 <i class="fa fa-quote-left"></i> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore. </p>
-                            <h4 class="font-weight-bold">Maria Kate</h4>
-                            <h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>
+                            <h4 class="font-weight-bold deixando-verde space-text">Maria Kate</h4>
+                            <h6 class="font-weight-bold my-3 space-text">Photographer at Studio LA</h6>
                             
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
+                           <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star-o deixando-verde"> </i>
                             </div>
                         </div>
                         
@@ -64,14 +64,14 @@
                             
                             <p>
                                 <i class="fa fa-quote-left"></i> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-                            <h4 class="font-weight-bold">John Doe</h4>
-                            <h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>
+                            <h4 class="font-weight-bold deixando-verde space-text">John Doe</h4>
+                            <h6 class="font-weight-bold my-3 space-text">Front-end Developer in NY</h6>
                             
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star blue-text"> </i>
-                            <i class="fa fa-star-o blue-text"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star deixando-verde"> </i>
+                            <i class="fa fa-star-o deixando-verde"> </i>
                             </div>
                         </div>
                         
@@ -102,9 +102,22 @@ export default {
 
 <style>
 .testimonials {
-  background-image: url("/static/assets/images/testi.png");
-  background-position: left center;
+  background-image: url("/static/assets/images/testi2.png") !important;
+  background-position:left center;
   background-repeat: no-repeat;
   padding-bottom: 90px;
+}
+
+.cor-section {
+    background-color: #282A2D;
+}
+
+.deixando-verde {
+    background: -webkit-linear-gradient(#4DF0D9 , #009069);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.space-text {
+    letter-spacing: 1px;;
 }
 </style>

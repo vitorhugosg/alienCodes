@@ -3,7 +3,7 @@
         <nav-bar-home>
 
         </nav-bar-home>
-        <header-secundario titulo="sobre" backgroundImage="/static/assets/images/imagens/ets-sobre3.jpg">
+        <header-secundario titulo="sobre" backgroundImage="/static/assets/images/imagens/ets-sobre2.jpg">
 
         </header-secundario>
         <sobre-duas-colunas>
@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 
 </style>

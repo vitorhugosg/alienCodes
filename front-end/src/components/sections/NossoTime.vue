@@ -21,7 +21,7 @@
                     <div class="avatar mx-auto">
                         <img src="/static/assets/images/imagens/bia.jpg" class="rounded-circle z-depth-1 img-fluid" alt="Sample avatar">
                     </div>
-                    <h5 class="font-weight-bold mt-4 mb-3 space-text">Bianca Carlsen</h5>
+                    <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Bianca Carlsen</h5>
                     <p class="text-uppercase deixar-verde"><strong>WEB DESIGNER</strong></p>
                     <p class="grey-text">
 "Olá, eu serei responsável por desenhar seu projeto. Prepare-se para alavancar seu negócio com uma interface diferenciada".</p>
@@ -47,7 +47,7 @@
                     <div class="avatar mx-auto">
                         <img src="/static/assets/images/imagens/vitor.jpg" class="rounded-circle z-depth-1 img-fluid" alt="Sample avatar">
                     </div>
-                    <h5 class="font-weight-bold mt-4 mb-3 space-text">Vitor Hugo</h5>
+                    <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Vitor Hugo</h5>
                     <p class="text-uppercase deixar-verde"><strong>Web developer</strong></p>
                     <p class="grey-text">“Olá, eu sou a pessoa que irá desenvolver o código do seu projeto. Pode contar comigo, porque missão dada é missão cumprida!“
 
@@ -74,7 +74,7 @@
                     <div class="avatar mx-auto">
                         <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
-                    <h5 class="font-weight-bold mt-4 mb-3 space-text">Maria Smith</h5>
+                    <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Maria Smith</h5>
                     <p class="text-uppercase deixar-verde"><strong>FRONTEND DEVELOPER</strong></p>
                     <p class="grey-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim est fugiat nulla id eu laborum.</p>
                     <ul class="list-unstyled mb-0">
@@ -99,7 +99,7 @@
                     <div class="avatar mx-auto">
                         <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
-                    <h5 class="font-weight-bold mt-4 mb-3 space-text">Tom Adams</h5>
+                    <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Tom Adams</h5>
                     <p class="text-uppercase deixar-verde"><strong>Backend developer</strong></p>
                     <p class="grey-text">Perspiciatis repellendus ad odit consequuntur, eveniet earum nisi qui consectetur totam officia voluptates perferendis voluptatibus aut.</p>
                     <ul class="list-unstyled mb-0">

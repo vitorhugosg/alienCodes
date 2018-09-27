@@ -3,7 +3,7 @@
   <div>
 		
       <nav-bar-home></nav-bar-home>
-      <header-secundario titulo="Portfólio" backgroundImage="/static/assets/images/imagens/banner-port2.jpg">
+      <header-secundario titulo="Portfólio" backgroundImage="/static/assets/images/imagens/banner2-port2.jpg">
 			</header-secundario>
 			<portfolio-mix></portfolio-mix>
       <footer-vue></footer-vue>
