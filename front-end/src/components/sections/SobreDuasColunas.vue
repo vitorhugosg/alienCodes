@@ -2,12 +2,16 @@
 
   <section class="py-5 cor-section">
       <div class="container">
-          <div class="row" style="margin: 0px 50px 0px 50px;">
-              <div class="col-md-12" >
+          <div class="row" >
+              <div class="col-md-6" >
+                <img src="/static/assets/images/imagens/sobre-noix.png" alt="">
+                  
+              </div>
+              <div class="col-md-6" >
                 <h3>Nossa Agência de Aliens</h3>
                 
                 <p class="grey-text">
-                    Nossa agência é formada por quatro integrantes que possuem um conhecimento alien de desenvolvimento web!
+                    Nossa agência é formada por quatro integrantes que possuem um conhecimento alien em desenvolvimento web!
                     Temos o intuito de fomentar a economia criativa desenvolvendo sites, sistemas e aplicativos de forma 
                     interativa e amigável.
                 </p>

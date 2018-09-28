@@ -3,7 +3,7 @@
         <nav-bar-home>
 
         </nav-bar-home>
-        <header-secundario titulo="sobre" backgroundImage="/static/assets/images/imagens/ets-sobre2.jpg">
+        <header-secundario titulo="sobre" backgroundImage="/static/assets/images/imagens/ets-sobre4.jpg">
 
         </header-secundario>
         <sobre-duas-colunas>

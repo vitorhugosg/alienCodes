@@ -3,17 +3,20 @@
 	<div>
 		<nav class="navbar navbar-expand-lg fixed-top border-none">
 			<div class="container">
-				<a class="navbar-brand d-flex justify-content-start" href="#">
-					<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-					
-				</a>
-				<div class="collapse navbar-collapse" id="navbarText">
-					<ul class="navbar-nav mr-auto">
-					</ul>
-					<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</a>
+				<div class="row w-100">
+					<div class="col-md-12">
+						<a class="navbar-brand d-flex justify-content-start" href="#">
+							<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
+							
+						</a>
+						<a type="button" v-on:click="ativarMenuTotal()" class="botao-mobile waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</a>
+						
+					</div>
 				</div>
+				
+				
 			</div>
 		</nav>
 		<transition v-if="this.menuAtivado"
@@ -23,23 +26,18 @@
 		>
 			<div class="menuTotal animated zoomIn" style="background-image: url('/static/assets/images/BANNERS-MENU.jpg')">
 				<div class="container">
-					<div class="row">
-						<nav class="navbar navbar-expand-lg fixed-top border-none">
-							<div class="container">
-								<a class="navbar-brand d-flex justify-content-start" href="#">
-									<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-								</a>
-								<div class="collapse navbar-collapse" id="navbarText">
-									<ul class="navbar-nav mr-auto">
-									</ul>
-									<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
-										<i class="fa fa-close" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-						</nav>
+					<div class="row w-100">
+					<div class="col-md-12">
+						<a class="navbar-brand d-flex justify-content-start" href="#">
+							<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
+							
+						</a>
+						<a type="button" v-on:click="ativarMenuTotal()" class="botao-mobile waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
+							<i class="fa fa-close" aria-hidden="true"></i>
+						</a>
 						
 					</div>
+				</div>
 					<div class="row pt-5">
 						<div id="" class="col-md-12 text-center pt-5">
 							<div v-on:click="ativarMenuTotalClickMenu()" class='pt-5'>
@@ -127,5 +125,22 @@ name:'Menuhome',
 	.nav-menu a:hover {
 		border-bottom: 5px dotted #fff; 
 	}
+	.botao-mobile{
+		display: inline-block;
+		float: right;
+		position: relative;
+		bottom: 55px;
+	}
+	
    
+   @media (max-width: 991px) { 
+     .botao-mobile{
+        position: fixed !important;
+		top: 15px;
+		right: 15px;
+	
+      } 
+    } 
+
+
 </style>

@@ -104,7 +104,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© Copyright 2018 - 
-      <a href="https://aliencodes.com.br">AlienCodes</a>
+      <a href="#">AlienCodes</a>
     </div>
     <!-- Copyright -->
 
