@@ -98,4 +98,21 @@ class PortfolioController extends Controller{
 
     	return $data;
     }
+
+    public function getPortfolioId($id){
+    	$portfolio = Portfolio::class;
+    	$data = $portfolio::find($id);
+    	$data['imagens'] = DB::table('portfolio_images')->where('portfolio_id', $data['id'])->get();
+
+    	
+    	foreach($data['imagens'] as $key => $imagem){
+    		$data['imagens'][$key]->path = asset('storage/'.$imagem->path);
+    	}
+    	$data['categorias'] = DB::table('categoria_portfolio__portfolios')->where('portfolio_id', $data['id'])->get();
+    	foreach ($data['categorias'] as $key2 => $categoria) {
+			$data['categorias'][$key2]->nomeCategoria = DB::table('categoria_portfolios')->where('id', $categoria->categoria_portfolio_id)->value('titulo_categoria');
+		}
+    	return $data;
+
+    }
 }

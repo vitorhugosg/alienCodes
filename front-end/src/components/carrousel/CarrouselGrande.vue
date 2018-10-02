@@ -3,15 +3,10 @@
   <div>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg" alt="First slide">
+            <div class="carousel-item" :class="{active: chave == 0}" v-for="(imagem, chave) in imagens" :key="imagem.id">
+                <img class="d-block w-100" :src="imagem.path">
             </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg" alt="Third slide">
-            </div>
+            
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -31,11 +26,22 @@
 
 export default {
   name: "CarrouselGrande",
+  props:[
+      'imagens'
+  ],
   components: {
 
+  },
+  created(){
+      console.log(this.imagens);
   }
 };
 </script>
 
 <style scoped>
+.carousel-item{
+    object-fit: cover;
+    object-position: center;
+    height: 600px;
+}
 </style>

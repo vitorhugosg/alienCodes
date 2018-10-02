@@ -21,3 +21,4 @@ Route::post('/usuario/cadastro','Usuario@cadastro');
 Route::post('/portfolio/add', 'PortfolioController@adicionarPortfolio');
 Route::get('/portfolio/getcategorias', 'PortfolioController@getCategorias');
 Route::get('/portfolio/getportfolio', 'PortfolioController@getPortfolio');
+Route::get('/portfolio/getportfoliobyid/{id}', 'PortfolioController@getPortfolioId');

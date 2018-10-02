@@ -3,10 +3,10 @@
 	<div>
 		<nav class="navbar navbar-expand-lg fixed-top border-none">
 			<div class="container">
-				<a class="navbar-brand d-flex justify-content-start" href="#">
+				<router-link class="navbar-brand d-flex justify-content-start" to="/">
 					<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
 					
-				</a>
+				</router-link>
 				<div class="collapse navbar-collapse" id="navbarText">
 					<ul class="navbar-nav mr-auto">
 					</ul>
@@ -26,9 +26,10 @@
 					<div class="row">
 						<nav class="navbar navbar-expand-lg fixed-top border-none">
 							<div class="container">
-								<a class="navbar-brand d-flex justify-content-start" href="#">
+								<router-link class="navbar-brand d-flex justify-content-start" to="/">
 									<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-								</a>
+									
+								</router-link>
 								<div class="collapse navbar-collapse" id="navbarText">
 									<ul class="navbar-nav mr-auto">
 									</ul>

@@ -3,22 +3,22 @@
   <div>
       
         <nav-bar-home></nav-bar-home>
-        <header-secundario titulo="Portfólio-Page" backgroundImage="/static/assets/images/imagens/banner-port2.jpg">
+        <header-secundario titulo="Portfólio-Page" backgroundImage="/static/assets/images/imagens/banner2-port2.jpg">
                 </header-secundario>
-        <div class="container">
+        <div class="container" v-if="this.portfolio">
             <div class="row">
                 <div class="col-md-12">
-                    <carrousel-grande>
+                    <carrousel-grande :imagens="portfolio.imagens">
 
                     </carrousel-grande>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-9 py-5">
-                    <titulo-e-texto></titulo-e-texto>
+                    <titulo-e-texto :texto="portfolio.descricao" :titulo="portfolio.titulo"></titulo-e-texto>
                 </div>
                 <div class="col-md-3 py-5">
-                    <side-bar-list>
+                    <side-bar-list :categorias="portfolio.categorias">
 
                     </side-bar-list>
                 </div>
@@ -50,6 +50,26 @@ export default {
     CarrouselGrande,
     TituloETexto,
     SideBarList
+  },
+  created(){
+      this.$http.get(this.$urlAPI + 'portfolio/getportfoliobyid/'+ this.$route.params.id)
+    .then(response => {
+        if(response.data){
+            
+            this.portfolio = response.data;
+            console.log(this.portfolio);
+        }
+    })
+    .catch(function (error) {
+        console.log(error);
+        alert('ERROR: Tente novamente mais tarde!');
+        
+    });
+  },
+  data(){
+      return {
+          portfolio: false
+      }
   }
 };
 </script>

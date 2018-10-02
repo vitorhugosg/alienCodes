@@ -48,8 +48,8 @@ Vue.config.productionTip = false
 //definindo stancia do axios:
 Vue.prototype.$http = axios;
 //definindo variavel URL
-Vue.prototype.$urlAPI = 'http://127.0.0.1:8000/api/';
-Vue.prototype.$urlBaseAssets = 'http://127.0.0.1:8000/storage/';
+Vue.prototype.$urlAPI = 'http://api-aliencodes-com-br.umbler.net/api/';
+Vue.prototype.$urlBaseAssets = 'http://api-aliencodes-com-br.umbler.net/storage/';
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
