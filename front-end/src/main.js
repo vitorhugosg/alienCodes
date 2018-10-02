@@ -11,7 +11,8 @@ import Vuex from 'vuex'
 var store = {
   //variaveis e listas
   state: {
-    usuario: sessionStorage.getItem('usuario') ? JSON.parse(sessionStorage.getItem('usuario')) : null
+    usuario: sessionStorage.getItem('usuario') ? JSON.parse(sessionStorage.getItem('usuario')) : null,
+    portfolio: []
   },
   //metodos para listar os getters
   getters:{
@@ -25,12 +26,18 @@ var store = {
       }else{
         return;
       }
+    },
+    getPortfolio: state=>{
+      return state.portfolio;
     }
   },
   //meetodos para auterar os valores 
   mutations:{
     setUsuario(state, n){
       state.usuario = n;
+    },
+    setPortfolio(state, n){
+      state.portfolio = n;
     }
   }
 }
@@ -42,6 +49,7 @@ Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 //definindo variavel URL
 Vue.prototype.$urlAPI = 'http://127.0.0.1:8000/api/';
+Vue.prototype.$urlBaseAssets = 'http://127.0.0.1:8000/storage/';
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

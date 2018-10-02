@@ -1,89 +1,35 @@
 <template>
 
   <section class="cor-section py-5">
-      <div class="container-fluid ">
+      <div class="container-fluid" >
           <div class="row m-0">
               <div class="col-md-12 text-center titulo">
                   <h2 class="background-title">NOSSOS PROJETOS</h2>
               </div>
           </div>
+          
           <div class="row pb-5">
                 <div class="controls text-center w-100">
                     <button type="button" class="btn purple-gradient btn-md btn-rounded" data-filter="all">All</button>
-                    <button type="button" class="btn purple-gradient btn-md btn-rounded" data-filter=".category-a">Category A</button>
-                    <button type="button" class="btn purple-gradient btn-md btn-rounded" data-filter=".category-b">Category B</button>
-                    <button type="button" class="btn purple-gradient btn-md btn-rounded" data-filter=".category-c">Category C</button>
+                    <button v-for="categoria in categorias" :key="categoria.id" type="button" class="btn purple-gradient btn-md btn-rounded" :data-filter="'.portfolio'+categoria.id">{{categoria.titulo_categoria}}</button>
                 </div>
             </div>
             <div class="containerMix">
                 <div class="row">
-                   
-                    <div class="col-md-3 col-sm-12 mix p-2 category-a " data-order="1">
+                    <div v-for="(portfolio, chave) in portfolios" :key="portfolio.id" :class="'col-md-3 col-sm-12 mix p-2 '+ classPortfolio[chave]" :data-order="portfolio.id">
                         <div class="view overlay">
-                            <img src="/static/assets/images/imagens/portfolio/coc.jpg" class="img-fluid " alt="smaple image">
+                            <img :src="urlBase + portfolio.imagens[0].path" class="img-fluid " :alt="portfolio.titulo">
                             <div class="mask flex-center rgba-grey-strong">
                                 <div class="row text-center">
                                     <div class="col-md-12">
-                                        <p class="white-text d-block">Nome do trabalho</p>
+                                        <p class="white-text d-block">{{portfolio.titulo}}</p>
                                     </div>
                                     <div class="col-md-12">
-                                        <router-link class="btn purple-gradient btn-rounded btn-sm" to="/portfolio/12/ver">Ver Projeto</router-link>
+                                        <router-link class="btn purple-gradient btn-rounded btn-sm" :to="'/portfolio/'+ portfolio.id +'/ver'">Ver Projeto</router-link>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                
-                    <div class="col-md-3 col-sm-12 mix p-2 category-b" data-order="2">
-                        <div class="view overlay">
-                            <img src="/static/assets/images/imagens/portfolio/daraujo.jpg" class="img-fluid " alt="smaple image">
-                            <div class="mask flex-center rgba-grey-strong">
-                                <div class="row text-center">
-                                    <div class="col-md-12">
-                                        <p class="white-text d-block">Nome do trabalho</p>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <router-link class="btn purple-gradient btn-rounded btn-sm" to="/portfolio/12/ver">Ver Projeto</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                
-                
-                    <div class="col-md-3 col-sm-12 mix p-2 category-b category-c" data-order="3">
-                        <div class="view overlay">
-                            <img src="/static/assets/images/imagens/portfolio/doisellis.jpg" class="img-fluid " alt="smaple image">
-                            <div class="mask flex-center rgba-grey-strong">
-                                <div class="row text-center">
-                                    <div class="col-md-12">
-                                        <p class="white-text d-block">Nome do trabalho</p>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <router-link class="btn purple-gradient btn-rounded btn-sm" to="/portfolio/12/ver">Ver Projeto</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                    <div class="col-md-3 col-sm-12 mix p-2 category-a category-d" data-order="4">
-                        <div class="view overlay">
-                            <img src="/static/assets/images/imagens/portfolio/fiesc.jpg" class="img-fluid " alt="smaple image">
-                            <div class="mask flex-center rgba-grey-strong">
-                                <div class="row text-center">
-                                    <div class="col-md-12">
-                                        <p class="white-text d-block">Nome do trabalho</p>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <router-link class="btn purple-gradient btn-rounded btn-sm" to="/portfolio/12/ver">Ver Projeto</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                     
                 </div>
@@ -104,10 +50,62 @@ import mixitup from 'mixitup';
 
 export default {
   name: 'PortfolioMix',
-  mounted() {
-    var containerEl = document.querySelector('.containerMix');
-    var mixer = mixitup(containerEl);
-  }
+  data(){
+      return {
+          portfolios: false,
+          categorias: {},
+          classPortfolio: []
+      }
+  },
+  mounted(){
+
+      this.$http.get(this.$urlAPI + 'portfolio/getportfolio')
+        .then(response => {
+            if(response.data){
+                this.portfolios = response.data;
+                localStorage.setItem('portfolio', JSON.stringify(response.data));
+                this.$store.commit('setPortfolio', response.data);
+                for (let i = 0; i < this.portfolios.length; i++) {
+                    const element = this.portfolios[i];
+                    this.classPortfolio[i] = '';
+                    for (let i2 = 0; i2 < element.categorias.length; i2++) {
+                        const cat = element.categorias[i2];
+                        this.classPortfolio[i] = this.classPortfolio[i] +'portfolio'+ cat.id + ' ';
+                        
+                    }
+                    
+                }
+                console.log(this.portfolios);
+                
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+            alert('ERROR: Tente novamente mais tarde!');
+        });
+
+        this.urlBase = this.$urlBaseAssets;
+        this.$http.get(this.$urlAPI + 'portfolio/getcategorias')
+        .then(response => {
+            if(response.data){
+                this.categorias = response.data;
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+            alert('ERROR: Tente novamente mais tarde!');
+            
+        });
+
+        setTimeout(() => {
+            
+            var containerEl = document.querySelector('.containerMix');
+            var mixer = mixitup(containerEl);
+        }, 1000);
+        
+
+        
+    }
 }
 </script>
 

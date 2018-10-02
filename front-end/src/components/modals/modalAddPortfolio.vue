@@ -79,7 +79,9 @@
                 .then(response => {
                     if(response.data){
                         console.log(response.data)
-                        
+                        localStorage.setItem('portfolio', JSON.stringify(response.data.portfolio));
+                        this.$store.commit('setPortfolio', response.data.portfolio);
+                        window.jquery('#modalSubscriptionForm').modal('hide');
                     }
                 })
                 .catch(function (error) {
