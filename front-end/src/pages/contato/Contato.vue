@@ -2,7 +2,7 @@
    
         <div>
             <nav-bar-home></nav-bar-home>
-            <header-secundario titulo="Contato" backgroundImage="/static/assets/images/imagens/banner-contato.jpg">
+            <header-secundario titulo="Contato" backgroundImage="/static/assets/images/imagens/banner-contato2.jpg">
                 </header-secundario>
                 <section-contato>
                     
@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style scoped>
+
 
 
 </style>
