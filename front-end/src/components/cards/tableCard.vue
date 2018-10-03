@@ -54,6 +54,7 @@
         },
         created(){
             this.urlBase = this.$urlBaseAssets;
+            
             this.$http.get(this.$urlAPI + 'portfolio/getportfolio')
             .then(response => {
                 if(response.data){

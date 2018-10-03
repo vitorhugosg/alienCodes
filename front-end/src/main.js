@@ -56,7 +56,6 @@ if(process.env.NODE_ENV == 'development'){
   Vue.prototype.$urlAPI = 'https://api.aliencodes.com.br/api/';
   Vue.prototype.$urlBaseAssets = 'https://api.aliencodes.com.br/storage/';
 }
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
