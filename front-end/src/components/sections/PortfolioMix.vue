@@ -70,7 +70,7 @@ export default {
                     this.classPortfolio[i] = '';
                     for (let i2 = 0; i2 < element.categorias.length; i2++) {
                         const cat = element.categorias[i2];
-                        this.classPortfolio[i] = this.classPortfolio[i] +'portfolio'+ cat.id + ' ';
+                        this.classPortfolio[i] = this.classPortfolio[i] +'portfolio'+ cat.categoria_portfolio_id + ' ';
                         
                     }
                     
