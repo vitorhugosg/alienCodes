@@ -60,5 +60,8 @@ export default new Router({
       name: 'PortfolioDashboard',
       component: PortfolioDashboard
     },
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

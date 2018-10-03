@@ -3,7 +3,7 @@
 	<div>
 		<nav class="navbar navbar-expand-lg fixed-top border-none">
 			<div class="container">
-<<<<<<< HEAD
+
 				<router-link class="navbar-brand d-flex justify-content-start" to="/">
 					<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
 					
@@ -14,19 +14,7 @@
 					<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</a>
-=======
-				<div class="row w-100">
-					<div class="col-md-12">
-						<a class="navbar-brand d-flex justify-content-start" href="#">
-							<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-							
-						</a>
-						<a type="button" v-on:click="ativarMenuTotal()" class="botao-mobile waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
-							<i class="fa fa-bars" aria-hidden="true"></i>
-						</a>
-						
-					</div>
->>>>>>> 7d906b1119e22484530eafe6eee82f0a7fa65272
+
 				</div>
 				
 				
@@ -39,7 +27,7 @@
 		>
 			<div class="menuTotal animated zoomIn" style="background-image: url('/static/assets/images/BANNERS-MENU.jpg')">
 				<div class="container">
-<<<<<<< HEAD
+
 					<div class="row">
 						<nav class="navbar navbar-expand-lg fixed-top border-none">
 							<div class="container">
@@ -56,18 +44,6 @@
 								</div>
 							</div>
 						</nav>
-=======
-					<div class="row w-100">
-					<div class="col-md-12">
-						<a class="navbar-brand d-flex justify-content-start" href="#">
-							<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-							
-						</a>
-						<a type="button" v-on:click="ativarMenuTotal()" class="botao-mobile waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
-							<i class="fa fa-close" aria-hidden="true"></i>
-						</a>
->>>>>>> 7d906b1119e22484530eafe6eee82f0a7fa65272
-						
 					</div>
 				</div>
 					<div class="row pt-5">
@@ -98,7 +74,6 @@
 						</div>	
 					</div>
 				</div>
-			</div>
 		</transition>
 	</div>
 	
