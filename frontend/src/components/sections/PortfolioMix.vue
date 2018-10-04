@@ -8,13 +8,13 @@
               </div>
           </div>
           
-          <div class="row pb-5">
+          <div class="row pb-5" v-if="onLine">
                 <div class="controls text-center w-100">
                     <button type="button" class="btn purple-gradient btn-md btn-rounded" data-filter="all">All</button>
                     <button v-for="categoria in categorias" :key="categoria.id" type="button" class="btn purple-gradient btn-md btn-rounded" :data-filter="'.portfolio'+categoria.id">{{categoria.titulo_categoria}}</button>
                 </div>
             </div>
-            <div class="containerMix">
+            <div class="containerMix" v-if="onLine">
                 <div class="row">
                     <div v-for="(portfolio, chave) in portfolios" :key="portfolio.id" :class="'col-md-3 col-sm-12 mix p-2 '+ classPortfolio[chave]" :data-order="portfolio.id">
                         <div class="view overlay">
@@ -33,6 +33,11 @@
                     </div>
                     
                 </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <h2 class="text-center text-white">Infelizmente essa funcionalidade só funciona On-line.</h2>
+              </div>
           </div>
           <div class="row pt-5">
               <div class="col-md-12 text-center">                  
@@ -54,12 +59,14 @@ export default {
       return {
           portfolios: false,
           categorias: {},
-          classPortfolio: []
+          classPortfolio: [],
+          onLine: false,
       }
   },
   mounted(){
-
-      this.$http.get(this.$urlAPI + 'portfolio/getportfolio')
+      this.onLine = navigator.online;
+      if(this.onLine){
+        this.$http.get(this.$urlAPI + 'portfolio/getportfolio')
         .then(response => {
             if(response.data){
                 this.portfolios = response.data;
@@ -102,6 +109,8 @@ export default {
             var containerEl = document.querySelector('.containerMix');
             var mixer = mixitup(containerEl);
         }, 2000);
+      }
+      
         
 
         
