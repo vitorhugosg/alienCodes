@@ -44,7 +44,7 @@
 
                     <!-- Grid column -->
                     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="avatar mx-auto">
+                    <div class="avatar mx-auto avatar-mobile">
                         <img src="/static/assets/images/imagens/vitor.jpg" class="rounded-circle z-depth-1 img-fluid" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Vitor Hugo</h5>
@@ -71,7 +71,7 @@
 
                     <!-- Grid column -->
                     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="avatar mx-auto">
+                    <div class="avatar mx-auto avatar-mobile">
                         <img src="/static/assets/images/Fellipe.jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Felippe Simões</h5>
@@ -96,7 +96,7 @@
 
                     <!-- Grid column -->
                     <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="avatar mx-auto">
+                    <div class="avatar mx-auto avatar-mobile">
                         <img src="/static/assets/images/sther.jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Sther Condé</h5>
@@ -173,4 +173,12 @@ export default {
 .space-text {
     letter-spacing: 1px;;
 }
+
+@media (max-width: 991px) { 
+     .avatar-mobile{
+      margin-top:25px !important;
+	
+      } 
+    } 
+
 </style>
