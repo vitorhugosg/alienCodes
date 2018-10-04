@@ -44,6 +44,11 @@
       This is your fallback content in case JavaScript fails to load.
     </noscript>
     <div id="app"></div>
+    
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
+
     <script type="text/javascript" src="/static/assets/js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="/static/assets/js/popper.min.js"></script>
@@ -54,9 +59,6 @@
     <script type="text/javascript">
       new WOW().init();
     </script>
-    <!-- Todo: only include in production -->
-    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
-    <!-- built files will be auto injected -->
-    
+    <script src="/service-worker.js"></script>
   </body>
 </html>
