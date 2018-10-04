@@ -40,8 +40,11 @@ export default {
 
 <style scoped>
 .carousel-item{
+    margin-top:30px;
     object-fit: cover;
     object-position: center;
     max-height: 600px;
 }
+
+
 </style>

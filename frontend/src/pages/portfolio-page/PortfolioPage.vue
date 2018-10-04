@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div class="cor-section">
       
         <nav-bar-home></nav-bar-home>
         <header-secundario titulo="Portfólio-Page" backgroundImage="/static/assets/images/imagens/banner2-port2.jpg">
@@ -75,4 +75,10 @@ export default {
 </script>
 
 <style scoped>
+
+.cor-section {
+    background-color: #282A2D;
+   
+}
+
 </style>

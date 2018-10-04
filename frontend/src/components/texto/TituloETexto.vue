@@ -1,9 +1,9 @@
 <template>
 
   <div>
-      <h2>{{titulo}}</h2>
+      <h2 class="background-title">{{titulo}}</h2>
       <div class="texto">
-           <p v-html="texto">
+           <p v-html="texto" class="grey-text">
                 
             </p>
       </div>
@@ -31,4 +31,9 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+
+
 </style>
