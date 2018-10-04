@@ -1,6 +1,6 @@
 # aliencodes
 
-> Esse é um projeto feito pela aliencodes PWA, grava informações offline :)
+> Vue Aliencodes FrontEnd
 
 ## Build Setup
 

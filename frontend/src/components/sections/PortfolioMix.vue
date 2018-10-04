@@ -101,7 +101,7 @@ export default {
             
             var containerEl = document.querySelector('.containerMix');
             var mixer = mixitup(containerEl);
-        }, 1000);
+        }, 2000);
         
 
         

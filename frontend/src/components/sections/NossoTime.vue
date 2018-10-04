@@ -22,7 +22,7 @@
                         <img src="/static/assets/images/imagens/bia.jpg" class="rounded-circle z-depth-1 img-fluid" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Bianca Carlsen</h5>
-                    <p class="text-uppercase deixar-verde"><strong>Marketing e Frontend Develloper</strong></p>
+                    <p class="text-uppercase deixar-verde"><strong>Marketing e Frontend developer</strong></p>
                     <p class="grey-text">
 "Olá, eu serei responsável por desenhar seu projeto. Prepare-se para alavancar seu negócio com uma interface diferenciada".</p>
                     <ul class="list-unstyled mb-0">
@@ -75,7 +75,7 @@
                         <img src="/static/assets/images/Fellipe.jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Felippe Simões</h5>
-                    <p class="text-uppercase deixar-verde"><strong>FRONTEND DEVELOPER</strong></p>
+                    <p class="text-uppercase deixar-verde"><strong>FullStack developer</strong></p>
                     <p class="grey-text">"Eu sou Felippe, trabalho na parte de estrutura, desenvolvimento backend, desenvolvimento frontend, eu dou vida a suas idéias ;)".</p>
                     <ul class="list-unstyled mb-0">
                         <!-- Facebook -->
@@ -83,9 +83,9 @@
                         <i class="fa fa-facebook deixar-verde"> </i>
                         </a>
                         <!-- Github -->
-                        <!-- <a href="#" target="_blank" class="p-2 fa-lg tw-ic">
+                        <a href="https://github.com/simoesfelippe" target="_blank" class="p-2 fa-lg tw-ic">
                            <i class="fa fa-github deixar-verde"> </i>
-                        </a> -->
+                        </a>
                         <!-- Linkedin -->
                         <a href="https://www.linkedin.com/in/felippe-sim%C3%B5es-772931164/" target="_blank" class="p-2 fa-lg ins-ic">
                             <i class="fa fa-linkedin deixar-verde" aria-hidden="true"></i>
@@ -100,7 +100,7 @@
                         <img src="/static/assets/images/sther.jpg" class="rounded-circle z-depth-1" alt="Sample avatar">
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 space-text text-white">Sther Condé</h5>
-                    <p class="text-uppercase deixar-verde"><strong>Designer e Frontend Develloper</strong></p>
+                    <p class="text-uppercase deixar-verde"><strong>Designer e Frontend developer</strong></p>
                     <p class="grey-text">"Olá sou Sther, apaixonada por desenvolvimento de marcas, trabalho com branding, UI e UX de aplicações com prazer em deixar sua marca favorecida."</p>
                     <ul class="list-unstyled mb-0">
                         <!-- Facebook -->

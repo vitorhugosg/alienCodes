@@ -102,10 +102,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     new SWPrecacheWebpackPlugin({
       cacheId: 'aliencodes',
       filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      staticFileGlobs: ['dist/**/*.{js,html,css,jpg}'],
       minify: true,
       stripPrefix: 'dist/',
-      runtimeCaching:[
+      runtimeCaching: [
         {
           urlPattern: /^http:\/\/localhost:3000/,
           handler: 'cacheFirst'
