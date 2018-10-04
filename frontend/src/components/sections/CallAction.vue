@@ -1,5 +1,5 @@
 <template>
-    <section class="py-5" style="background: url('/static/assets/images/imagens/img2-servicos.jpg') center; background-size: 100%;">
+    <section class="py-5" style="background: url('/static/assets/images/imagens/img2-servicos.jpg')no-repeat center; background-size: cover;">
         <div class="container">
             <div class="row py-5">
                 <div class="col-md-12 text-center text-white">
