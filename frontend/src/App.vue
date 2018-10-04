@@ -33,7 +33,7 @@ body {
 
   background-repeat: no-repeat;
   color: #f93069;
-  font-size: 24px;
+  font-size: 2em;
   text-align: center;
   background-position: center;
   margin-bottom: 50px;

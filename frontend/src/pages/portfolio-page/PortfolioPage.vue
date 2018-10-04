@@ -14,10 +14,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-9 py-5">
+                <div class="col-lg-9 py-5">
                     <titulo-e-texto :texto="portfolio.descricao" :titulo="portfolio.titulo"></titulo-e-texto>
                 </div>
-                <div class="col-md-3 py-5">
+                <div class="col-lg-3 py-5">
                     <side-bar-list :categorias="portfolio.categorias">
 
                     </side-bar-list>

@@ -78,10 +78,14 @@ name:'CarrouselHome',
        font-weight: 900;
    }
 
-@media (max-width: 575px) { 
-     .titulo_mobile{
-            font-size: 50px !important;
-      }
+@media (max-width: 700px) { 
+        .titulo_mobile{
+                font-size: 1em;
+        }
+        .carousel-caption h1{
+            font-size: 2em;
+            font-weight: 900;
+        }
     }
 
 

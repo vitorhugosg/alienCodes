@@ -42,6 +42,6 @@ export default {
 .carousel-item{
     object-fit: cover;
     object-position: center;
-    height: 600px;
+    max-height: 600px;
 }
 </style>

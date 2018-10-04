@@ -14,10 +14,7 @@
 					<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</a>
-
 				</div>
-				
-				
 			</div>
 		</nav>
 		<transition v-if="this.menuAtivado"
@@ -27,7 +24,6 @@
 		>
 			<div class="menuTotal animated zoomIn" style="background-image: url('/static/assets/images/BANNERS-MENU.jpg')">
 				<div class="container">
-
 					<div class="row">
 						<nav class="navbar navbar-expand-lg fixed-top border-none">
 							<div class="container">
@@ -38,7 +34,7 @@
 								<div class="collapse navbar-collapse" id="navbarText">
 									<ul class="navbar-nav mr-auto">
 									</ul>
-									<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
+									<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite botao-mobile">
 										<i class="fa fa-close" aria-hidden="true"></i>
 									</a>
 								</div>
@@ -87,7 +83,8 @@ export default {
 name:'Menuhome',
     data: function () {
         return {
-            menuAtivado: false
+			menuAtivado: false,
+			responsive: false
         }
 	},
 	methods:{
@@ -98,6 +95,13 @@ name:'Menuhome',
 			setTimeout(function(){
 				this.menuAtivado = !this.menuAtivado;
 			},300);
+		}
+	},
+	created(){
+		var windowWidth = window.innerWidth;
+		var windowHeight = window.innerHeight;
+		if(windowWidth < 768){
+			this.responsive = true;
 		}
 	}
 }
