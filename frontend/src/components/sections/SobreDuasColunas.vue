@@ -3,8 +3,8 @@
   <section class="py-5 cor-section">
       <div class="container">
           <div class="row" >
-              <div class="col-md-6" >
-                <img src="/static/assets/images/imagens/sobre-noix.png" alt="">
+              <div class="col-md-6 py-3" >
+                <img class="img-fluid" src="/static/assets/images/imagens/sobre-noix.png" alt="">
                   
               </div>
               <div class="col-md-6" >

@@ -24,7 +24,7 @@
                     <div class="skillsValue d-flex justify-content-center">
                         
                     </div>
-                    <h5 class="py-4 space-text"><strong>DESENVOLVIMENTO WEB</strong> </h5>
+                    <h5 class="py-4 space-text"><strong>DESENVOLVIMENTO WEB/APP</strong> </h5>
                 </div>
             </div>
         </div>
@@ -42,7 +42,16 @@ export default {
     var divs = document.querySelectorAll('.skillsValue');
     
     for (var i = 0; i < divs.length; ++i) {
-        var numberRound = Math.floor(Math.random() * 101);
+        var numberRound = '';
+        if (i == 0) {
+            numberRound = 81;
+        }else if(i == 1) {
+            numberRound = 87;
+        }else if(i == 2) {
+            numberRound = 93;
+        }else{
+            numberRound = 99;
+        }
         numberRound = '0.' + numberRound;
         var bar = new ProgressBar.Circle(divs[i], {
             color: '#4DF0D9',

@@ -8,7 +8,7 @@
                   <p class="grey-text">Com a nossa equipe engajada em Desenvolvimento Web, aceitamos encarar qualquer missão!</p>
                   <div class="row py-3">
                       <div class="col text-center">
-                          <button type="button" class="btn purple-gradient btn-md btn-rounded waves-effect">Saiba Mais</button>
+                          <router-link to="/servicos" type="button" class="btn purple-gradient btn-md btn-rounded waves-effect">Saiba Mais</router-link>
                       </div>
                   </div>
                   

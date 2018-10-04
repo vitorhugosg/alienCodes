@@ -9,7 +9,7 @@
       <div class="row text-center d-flex justify-content-center pt-5 mb-3">
 
         <!-- Grid column -->
-        <div class="col-md-2 mb-3">
+        <div v-if="this.$route.path != '/'" class="col-md-2 mb-3">
           <h6 class="nav-footer text-uppercase font-weight-bold">
             <router-link to="/">Home</router-link>
           </h6>
@@ -17,7 +17,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 mb-3">
+        <div v-if="this.$route.path != '/sobre'" class="col-md-2 mb-3">
           <h6 class="nav-footer text-uppercase font-weight-bold">
             <router-link to="/sobre">Sobre</router-link>
           </h6>
@@ -25,7 +25,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 mb-3">
+        <div v-if="this.$route.path != '/servicos'" class="col-md-2 mb-3">
           <h6 class="nav-footer text-uppercase font-weight-bold">
             <router-link to="/servicos">Serviços</router-link>
           </h6>
@@ -33,7 +33,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 mb-3">
+        <div v-if="this.$route.path != '/portfolio'" class="col-md-2 mb-3">
           <h6 class="nav-footer text-uppercase font-weight-bold">
             <router-link to="/portfolio">Portfólio</router-link>
           </h6>
@@ -41,7 +41,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 mb-3">
+        <div v-if="this.$route.path != '/contato'" class="col-md-2 mb-3">
           <h6 class="nav-footer text-uppercase font-weight-bold">
             <router-link to="/contato">Contato</router-link>
           </h6>

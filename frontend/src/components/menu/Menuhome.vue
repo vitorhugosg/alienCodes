@@ -5,16 +5,13 @@
 			<div class="container">
 
 				<router-link class="navbar-brand d-flex justify-content-start" to="/">
-					<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-					
+					<img v-if="!responsive" style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
+					<img v-if="responsive" style="max-height: 25px !important; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logo-responsive.png" alt="">
 				</router-link>
-				<div class="collapse navbar-collapse" id="navbarText">
-					<ul class="navbar-nav mr-auto">
-					</ul>
-					<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
+				
+				<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite">
 						<i class="fa fa-bars" aria-hidden="true"></i>
-					</a>
-				</div>
+				</a>
 			</div>
 		</nav>
 		<transition v-if="this.menuAtivado"
@@ -28,16 +25,13 @@
 						<nav class="navbar navbar-expand-lg fixed-top border-none">
 							<div class="container">
 								<router-link class="navbar-brand d-flex justify-content-start" to="/">
-									<img style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
-									
+									<img v-if="!responsive" style="max-height: 50px; width: auto;" class="img-fluid" src="/static/assets/images/imagens/logonew.png" alt="">
+									<img v-if="responsive" style="max-height: 25px !important; width: auto;" class="img-fluid logo-responsive" src="/static/assets/images/imagens/logo-responsive.png" alt="">
 								</router-link>
-								<div class="collapse navbar-collapse" id="navbarText">
-									<ul class="navbar-nav mr-auto">
-									</ul>
-									<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite botao-mobile">
-										<i class="fa fa-close" aria-hidden="true"></i>
-									</a>
-								</div>
+								
+								<a type="button" v-on:click="ativarMenuTotal()" class="waves-effect btn-floating btn-sm purple-gradient d-flex justify-content-end animated pulse infinite botao-mobile">
+									<i class="fa fa-close" aria-hidden="true"></i>
+								</a>
 							</div>
 						</nav>
 					</div>
@@ -45,27 +39,27 @@
 					<div class="row pt-5">
 						<div id="" class="col-md-12 text-center pt-5">
 							<div v-on:click="ativarMenuTotalClickMenu()" class='pt-5'>
-									<ul>
-										<li class="nav-menu p-3">
-											<router-link to="/" class="">Home</router-link>
-										</li>
-									
-										<li class="nav-menu p-3">
-											<router-link to="/sobre" class="">Sobre</router-link>
-										</li>
-									
-										<li class="nav-menu p-3">
-											<router-link to="/servicos" class="">Serviços</router-link>
-										</li>
-									
-										<li class="nav-menu p-3">
-											<router-link to="/portfolio" class="">Portfólio</router-link>
-										</li>
-									
-										<li class="nav-menu p-3">
-											<router-link to="/contato" class="">Contato</router-link>
-										</li>
-									</ul>						
+								<ul class="arrumaresponsiveul">
+									<li v-if="this.$route.path != '/'" class="nav-menu p-3">
+										<router-link to="/" class="">Home</router-link>
+									</li>
+								
+									<li v-if="this.$route.path != '/sobre'" class="nav-menu p-3">
+										<router-link to="/sobre" class="">Sobre</router-link>
+									</li>
+								
+									<li v-if="this.$route.path != '/servicos'" class="nav-menu p-3">
+										<router-link to="/servicos" class="">Serviços</router-link>
+									</li>
+								
+									<li v-if="this.$route.path != '/portfolio'" class="nav-menu p-3">
+										<router-link to="/portfolio" class="">Portfólio</router-link>
+									</li>
+								
+									<li v-if="this.$route.path != '/contato'" class="nav-menu p-3">
+										<router-link to="/contato" class="">Contato</router-link>
+									</li>
+								</ul>						
 							</div>
 						</div>	
 					</div>
@@ -103,6 +97,7 @@ name:'Menuhome',
 		if(windowWidth < 768){
 			this.responsive = true;
 		}
+		
 	}
 }
 </script>
@@ -140,17 +135,27 @@ name:'Menuhome',
 		display: inline-block;
 		float: right;
 		position: relative;
-		bottom: 55px;
+		
 	}
-	
+	.logo-responsive{
+		position: relative;
+		top: 15px;
+		left: 15px;
+	}
    
    @media (max-width: 991px) { 
      .botao-mobile{
         position: fixed !important;
 		top: 15px;
 		right: 15px;
-	
-      } 
+		bottom: 55px;
+      }
+	  .menuTotal{
+		overflow-y: auto;
+	  }
+	  .arrumaresponsiveul li{
+		  display: block;
+	  }
     } 
 
 
