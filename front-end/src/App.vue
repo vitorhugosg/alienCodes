@@ -11,11 +11,19 @@ export default {
 };
 </script>
 
+
+
 <style>
 
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch:300,300i,400,400i,500,500i,600,600i,700,700i'); 
+
+/* usar nos titulos font-family: 'Chakra Petch', sans-serif; */
+
+
 body {
- 
+
 }
+
 
 .background-title {
   font-size: 30px;
