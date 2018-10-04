@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8adc1fab7b8e712f6b78c6de68ab19da",
+    "content-hash": "cc71b2d564c16e7acfa6ed1f7aa2ce51",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -1948,6 +1948,49 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "resultsystems/laravel-cors",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/resultsystems/laravel-cors.git",
+                "reference": "8f5aae165ea78f94365b2e215b72d14f13ec56ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/resultsystems/laravel-cors/zipball/8f5aae165ea78f94365b2e215b72d14f13ec56ee",
+                "reference": "8f5aae165ea78f94365b2e215b72d14f13ec56ee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ResultSystems\\Cors\\CorsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ResultSystems\\Cors\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leandro Henrique Reis",
+                    "email": "emtudo@gmail.com"
+                }
+            ],
+            "description": "Laravel cors",
+            "time": "2018-02-15T12:54:30+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
