@@ -17,22 +17,26 @@
                 </div>
                 <div class="carousel-caption">
                     <h1 class="titulo_mobile  h1-responsive">ALIENCODES</h1>
-                    <h3 class="h3-responsive">Desenvolvendo sites e sistemas de outro mundo!</h3>
+                    <vue-typed-js class="text-center" :loop="true" :backSpeed="10" :typeSpeed="50" :strings="['Desenvolvendo sites e sistemas de outro mundo!']">
+                        <h3 class="h3-responsive typing text-center w-100"></h3>
+                    </vue-typed-js>
                     
                 </div>
                 </div>
                 <div class="carousel-item">
-                <!--Mask color-->
-                <div class="view">
-                    <img class="d-block w-100" src="/static/assets/images/imagens/BANNERS-02.jpg" alt="Second slide" style="
-                    object-fit: cover; min-height:500px;">
-                    
-                </div>
-                <div class="carousel-caption">
-                    <h3 class="h3-responsive">Nós construimos com</h3>
-                    <h1 class="titulo_mobile h1-responsive">CRIATIVIDADE & INOVAÇÃO</h1>
-                    
-                </div>
+                    <!--Mask color-->
+                    <div class="view">
+                        <img class="d-block w-100" src="/static/assets/images/imagens/BANNERS-02.jpg" alt="Second slide" style="
+                        object-fit: cover; min-height:500px;">
+                        
+                    </div>
+                    <div class="carousel-caption">
+                        <h3 class="h3-responsive">Nós construimos com</h3>
+                        <vue-typed-js class="text-center" :loop="true" :typeSpeed="100" :backSpeed="10" :strings="['CRIATIVIDADE ' +'E'+' INOVAÇÃO']" :contentType="'html'">
+                            <h1 class="titulo_mobile h1-responsive  w-100 text-center typing"></h1>
+                        </vue-typed-js>
+                        
+                    </div>
                 </div>
                 
             </div>
@@ -64,7 +68,10 @@ name:'CarrouselHome',
         
     },
     components:{
-        
+    },
+    created(){
+       
+
     }
 }
 </script>

@@ -5,7 +5,8 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import Vuex from 'vuex'
-
+import VueTypedJs from 'vue-typed-js'
+Vue.use(VueTypedJs)
 
 //configurando vuex
 var store = {
@@ -43,6 +44,7 @@ var store = {
 }
 
 Vue.use(Vuex)
+
 
 Vue.config.productionTip = false
 //definindo stancia do axios:
