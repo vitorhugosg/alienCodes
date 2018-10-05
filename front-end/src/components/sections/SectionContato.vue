@@ -178,16 +178,21 @@ export default {
                 mensagem: this.mensagemContato,
             }
             this.$http.post(this.$urlAPI + 'contato', data)
-            .then(function (response) {
-                this.sucessoEnviado = 'Email foi enviado com sucesso';
-                this.nomeContato = '';
-                this.emailContato = '';
-                this.telefoneContato = '';
-                this.empresaContato = '';
-                this.mensagemContato = '';
+            .then(response => {
+                if(response.status){
+                    this.sucessoEnviado = 'Email foi enviado com sucesso';
+                    this.nomeContato = '';
+                    this.emailContato = '';
+                    this.telefoneContato = '';
+                    this.empresaContato = '';
+                    this.mensagemContato = '';
+                }else{
+                    this.errosContato = 'Houve uma falha ao enviar o email';
+                }
+                
 
             })
-            .catch(function (error) {
+            .catch(error => {
                 this.errosContato = 'Digite um email válido';
             });
         },
