@@ -86,7 +86,7 @@ class PortfolioController extends Controller{
 
     public function getPortfolio(){
     	$portfolio = Portfolio::class;
-    	$data = $portfolio::get();
+    	$data = $portfolio::get()->orderBy('id','asc');
     	foreach ($data as $key => $value) {
     		$data[$key]['imagens'] = DB::table('portfolio_images')->where('portfolio_id', $data[$key]['id'])->get();
     		$data[$key]['categorias'] = DB::table('categoria_portfolio__portfolios')->where('portfolio_id', $data[$key]['id'])->get();
@@ -101,7 +101,7 @@ class PortfolioController extends Controller{
 
     public function getPortfolioId($id){
     	$portfolio = Portfolio::class;
-    	$data = $portfolio::find($id)->orderBy('id','asc');
+    	$data = $portfolio::find($id);
     	$data['imagens'] = DB::table('portfolio_images')->where('portfolio_id', $data['id'])->get();
 
     	
