@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { VueTypedJs } from 'vue-typed-js'
+
 export default {
   name: "app"
 };

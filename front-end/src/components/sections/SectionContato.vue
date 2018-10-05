@@ -18,15 +18,16 @@
 
                     <!-- Header -->
                     <h3 class="mt-4 deixando-verde"><i class="fa fa-envelope pr-2 deixando-verde"></i>Fale Conosco</h3>
-
+                    <h6 class="my-4 text-red">{{errosContato}}</h6>
+                    <h6 class="my-4 text-green">{{sucessoEnviado}}</h6>
                     <!-- Grid row -->
                     <div class="row">
 
                         <!-- Grid column -->
                         <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="form-contact-name" class="form-control">
-                            <label for="form-contact-name" class="">Seu Nome</label>
+                            <input v-model="nomeContato" type="text" id="form-contact-name" class="form-control">
+                            <label for="form-contact-name" class="">Seu Nome*</label>
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -34,8 +35,8 @@
                         <!-- Grid column -->
                         <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="form-contact-email" class="form-control">
-                            <label for="form-contact-email" class="">Seu E-mail</label>
+                            <input v-model="emailContato" type="text" id="form-contact-email" class="form-control">
+                            <label for="form-contact-email" class="">Seu E-mail*</label>
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -49,8 +50,8 @@
                         <!-- Grid column -->
                         <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="form-contact-phone" class="form-control">
-                            <label for="form-contact-phone" class="">Seu Telefone</label>
+                             <the-mask v-model="telefoneContato" mask="(##) #####-####"  id="form-contact-phone" class="form-control"/>
+                            <label for="form-contact-phone" class="">Seu Celular*</label>
                         </div>
                         </div>
                         <!-- Grid column -->
@@ -58,7 +59,7 @@
                         <!-- Grid column -->
                         <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <input type="text" id="form-contact-company" class="form-control">
+                            <input v-model="empresaContato" type="text" id="form-contact-company" class="form-control">
                             <label for="form-contact-company" class="">Sua Empresa</label>
                         </div>
                         </div>
@@ -73,9 +74,9 @@
                         <!-- Grid column -->
                         <div class="col-md-12">
                         <div class="md-form mb-0">
-                            <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"></textarea>
-                            <label for="form-contact-message" >Sua Mensagem</label>
-                            <a class="btn-floating btn-lg blue verdin">
+                            <textarea v-model="mensagemContato" type="text" id="form-contact-message" class="form-control md-textarea" rows="3"></textarea>
+                            <label for="form-contact-message" >Sua Mensagem*</label>
+                            <a class="btn-floating btn-lg blue verdin" v-on:click="enviarContato()">
                             <i class="fa fa-send-o"></i>
                             </a>
                         </div>
@@ -143,8 +144,61 @@
 </template>
 
 <script>
+import {TheMask} from 'vue-the-mask'
+
 export default {
-  name: 'SectionContato'
+    name: 'SectionContato',
+    data(){
+        return{
+            nomeContato: '',
+            emailContato: '',
+            telefoneContato: '',
+            empresaContato: '',
+            mensagemContato: '',
+            errosContato: '',
+            sucessoEnviado: ''
+        }
+    },
+    methods:{
+        enviarContato(){
+            if(!this.isEmail(this.emailContato)){
+                this.errosContato = 'Digite um email válido';
+                return;
+            }
+            if(this.nomeContato == '' || this.telefoneContato == '' || this.mensagemContato ==''){
+                this.errosContato = 'Preencha todos os campos por gentileza';
+                return;
+            }
+
+            var data = {
+                nome: this.nomeContato,
+                email: this.emailContato,
+                telefone: this.telefoneContato,
+                empresa: this.empresaContato,
+                mensagem: this.mensagemContato,
+            }
+            this.$http.post(this.$urlAPI + 'contato', data)
+            .then(function (response) {
+                this.sucessoEnviado = 'Email foi enviado com sucesso';
+                this.nomeContato = '';
+                this.emailContato = '';
+                this.telefoneContato = '';
+                this.empresaContato = '';
+                this.mensagemContato = '';
+
+            })
+            .catch(function (error) {
+                this.errosContato = 'Digite um email válido';
+            });
+        },
+        isEmail(email){
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+    },
+    components:{
+        TheMask
+    }
 }
 </script>
 
@@ -170,6 +224,10 @@ export default {
 .md-form label.active{
     border-color: #fff !important;
     color: #FFF;
+}
+input,
+textarea{
+    color: #fff !important;
 }
 
 /* .verdezando.active{
