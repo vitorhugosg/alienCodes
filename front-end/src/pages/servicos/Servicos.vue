@@ -15,9 +15,9 @@
 
         </call-action>
         
-        <testemunhos>
+        <!-- <testemunhos>
 
-        </testemunhos>
+        </testemunhos> -->
         <footer-vue>
         </footer-vue>
     </div>

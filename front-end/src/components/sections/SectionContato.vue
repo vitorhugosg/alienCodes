@@ -111,18 +111,14 @@
                     <hr class="hr-light my-4">
                         <ul class="list-inline text-center list-unstyled">
                             <li class="list-inline-item">
-                                <a class="p-2 fa-lg li-ic">
+                                <a target="_blank" href="https://www.facebook.com/CodesAlien/" class="p-2 fa-lg li-ic">
                                      <i class="fa fa-facebook verdin-claro"> </i>
                                 </a>
                             </li>
+                            
                             <li class="list-inline-item">
-                                <a class="p-2 fa-lg ins-ic">
-                                    <i class="fa fa-instagram verdin-claro"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="p-2 fa-lg tw-ic">
-                                    <i class="fa fa-twitter verdin-claro"></i>
+                                <a target="_blank" href="https://www.instagram.com/alien_codes/" class="p-2 fa-lg tw-ic">
+                                    <i class="fa fa-instagram verdin-claro"></i>
                                 </a>
                             </li>
                         </ul>
@@ -161,6 +157,9 @@ export default {
     },
     methods:{
         enviarContato(){
+            this.errosContato = ''
+            this.sucessoEnviado = ''
+
             if(!this.isEmail(this.emailContato)){
                 this.errosContato = 'Digite um email válido';
                 return;
@@ -180,7 +179,7 @@ export default {
             this.$http.post(this.$urlAPI + 'contato', data)
             .then(response => {
                 if(response.status){
-                    this.sucessoEnviado = 'Email foi enviado com sucesso';
+                    this.sucessoEnviado = 'Email foi enviado com sucesso!';
                     this.nomeContato = '';
                     this.emailContato = '';
                     this.telefoneContato = '';
