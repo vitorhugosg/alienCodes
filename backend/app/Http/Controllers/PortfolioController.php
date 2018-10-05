@@ -101,7 +101,7 @@ class PortfolioController extends Controller{
 
     public function getPortfolioId($id){
     	$portfolio = Portfolio::class;
-    	$data = $portfolio::find($id)->orderBy('id','desc');
+    	$data = $portfolio::find($id)->orderBy('id','asc');
     	$data['imagens'] = DB::table('portfolio_images')->where('portfolio_id', $data['id'])->get();
 
     	
