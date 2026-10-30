@@ -1,0 +1,16 @@
+# Local credentials and environment files
+/.env
+/backend/.env
+/front-end/.env
+/front-end/.env.local
+
+# Generated Laravel files
+/backend/vendor/
+/backend/node_modules/
+/backend/storage/*.key
+/backend/bootstrap/cache/*.php
+/backend/public/storage
+
+# Frontend dependencies
+/front-end/node_modules/
+/front-end/npm-debug.log

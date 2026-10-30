@@ -17,7 +17,7 @@
                         </div>
 
                         <div class="md-form">
-                            <editor v-model="descricao"  api-key="hjnt8q6gxjq017n7fw1lz5j358acvh9axp94nldeybbet8w6" :init="{plugins: 'wordcount'}"></editor>
+                            <editor v-model="descricao"  :api-key="tinyMceApiKey" :init="{plugins: 'wordcount'}"></editor>
                         </div>
                         <div style="width: 100%;">
                             <div v-for="item in categorias" :key="item.id"  style="width: 100%;">
@@ -60,6 +60,12 @@
                 this.arquivosUpload = e.target.files || e.dataTransfer.files; 
             },
             enviarPortfolio(){
+                const usuario = this.$store.state.usuario;
+                const token = usuario && usuario.token;
+                if (!token) {
+                    alert("Faça login antes de adicionar um item ao portfólio.");
+                    return;
+                }
                 //CHAMANDO FORMDATA
                 const fd = new FormData();
                 for( var i = 0; i < this.arquivosUpload.length; i++ ){
@@ -72,9 +78,7 @@
                 fd.append('descricao', this.descricao);
                 fd.append('categorias', this.categoriasEscolhidas);
                 this.$http.post(this.$urlAPI + 'portfolio/add', fd,{
-                    "headers":{
-                        'Content-Type': 'multipart/form-data'
-                    }
+                    headers: { Authorization: "Bearer " + token }
                 })
                 .then(response => {
                     if(response.data){
@@ -85,7 +89,7 @@
                     }
                 })
                 .catch(function (error) {
-                    console.log(error);
+                    console.error("Falha ao enviar o portfólio.");
                     alert('ERROR: Tente novamente mais tarde!');
                     
                 });
@@ -94,6 +98,7 @@
          data () {
             return {
                 arquivosUpload : [],
+                tinyMceApiKey: process.env.TINYMCE_API_KEY || '',
                 categorias : [],
                 checkedNames: [],
                 titulo: '',
@@ -109,7 +114,7 @@
                 }
             })
             .catch(function (error) {
-                console.log(error);
+                console.error("Falha ao enviar o portfólio.");
                 alert('ERROR: Tente novamente mais tarde!');
                 
             });

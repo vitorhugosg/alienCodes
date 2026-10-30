@@ -6,113 +6,150 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Models\Portfolio;
-use App\Models\PortfolioImages;
 use App\Models\CategoriaPortfolio;
-use App\Models\Categoria_Portfolio;
 
-class PortfolioController extends Controller{
+class PortfolioController extends Controller
+{
+    public function adicionarPortfolio(Request $request)
+    {
+        $validated = $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descricao' => 'required|string|max:20000',
+            'categorias' => ['required', 'string', 'regex:/^[0-9]+(,[0-9]+)*$/'],
+            'files' => 'required|array|min:1|max:10',
+            'files.*' => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:5120',
+        ]);
 
-    public function adicionarPortfolio(Request $request, Portfolio $portfolio, PortfolioImages $portfolioImages, Categoria_Portfolio $relacaoCat){
-    	$data = $request->all();
-		$imagens = array();
-		//verificando se chegou imagens e colocando ela no lugar adequado
-    	if ($file = $request->file()) {
-			foreach ($file['files'] as $arquivo) {
-				$ext = $arquivo->extension();
-				$imagens[] = Storage::putFileAs('/portfolios', $arquivo, md5(time().rand ( 0 , 9999 )).'.'.$ext);
-			}
-		}else{
-			return [
-				'status' => false,
-				'error' => 'Não chegaram arquivos'
-			];
-		}
-		//SALVANDO PORTFOLIO
-		$titulo = $data['titulo'];
-		$descricao = $data['descricao'];
-		$categorias = explode(',', $data['categorias']);
-		$portfolio->titulo = $titulo;
-		$portfolio->descricao = $descricao;
-		$portfolio->data = date('Y-m-d H:i:s');
-		if (!$portfolio->save()) {
-			return [
-				'status' => false,
-				'error' => 'Falha ao cadastrar portfolio'
-			];
-		}
+        $categoryIds = array_values(array_unique(explode(',', $validated['categorias'])));
+        $existingCategoryIds = DB::table('categoria_portfolios')
+            ->whereIn('id', $categoryIds)
+            ->pluck('id')
+            ->map(function ($id) {
+                return (string) $id;
+            })
+            ->all();
 
-		//Salvando Imagens
-		foreach ($imagens as $key => $image) {
-			$insertImagens[$key]['portfolio_id'] = $portfolio->id;
-			$insertImagens[$key]['path'] = $image;
-		}
+        if (count($existingCategoryIds) !== count($categoryIds)) {
+            return response()->json(['message' => 'Uma ou mais categorias são inválidas.'], 422);
+        }
 
-		if (!$portfolioImages->insert($insertImagens)) {
-			return [
-				'status' => false,
-				'error' => 'Falha ao cadastrar imagens'
-			];
-		}
+        $safeDescription = $this->sanitizeDescription($validated['descricao']);
+        $storedPaths = [];
 
-		foreach ($categorias as $key => $categoria) {
-			$insetCategorias[$key]['portfolio_id'] = $portfolio->id;
-			$insetCategorias[$key]['categoria_portfolio_id'] = $categoria;
-		}
+        try {
+            DB::transaction(function () use ($request, $validated, $categoryIds, $safeDescription, &$storedPaths) {
+                $portfolio = new Portfolio();
+                $portfolio->titulo = $validated['titulo'];
+                $portfolio->descricao = $safeDescription;
+                $portfolio->data = date('Y-m-d H:i:s');
+                $portfolio->saveOrFail();
 
-		
-		if (!DB::table('categoria_portfolio__portfolios')->insert($insetCategorias)) {
-			return [
-				'status' => false,
-				'error' => 'Falha ao cadastrar categoria'
-			];
-		}else{
-			return[
-				'status' => true,
-				'mensagem' => 'Portfolio adicionado com sucesso',
-				'portfolio' => $this->getPortfolio()
-			];
-		}
+                $images = [];
+                foreach ($request->file('files') as $file) {
+                    $path = $file->store('portfolios', 'public');
+                    $storedPaths[] = $path;
+                    $images[] = [
+                        'portfolio_id' => $portfolio->id,
+                        'path' => $path,
+                    ];
+                }
 
+                DB::table('portfolio_images')->insert($images);
+
+                $categories = [];
+                foreach ($categoryIds as $categoryId) {
+                    $categories[] = [
+                        'portfolio_id' => $portfolio->id,
+                        'categoria_portfolio_id' => $categoryId,
+                    ];
+                }
+
+                DB::table('categoria_portfolio__portfolios')->insert($categories);
+            });
+        } catch (\Throwable $exception) {
+            Storage::disk('public')->delete($storedPaths);
+            throw $exception;
+        }
+
+        return response()->json([
+            'status' => true,
+            'mensagem' => 'Portfólio adicionado com sucesso.',
+            'portfolio' => $this->getPortfolio(),
+        ], 201);
     }
 
-    public function getCategorias(){
-    	$categorias = CategoriaPortfolio::get();
+    public function getCategorias()
+    {
+        $categories = CategoriaPortfolio::all();
 
-    	foreach ($categorias as $key2 => $categoria) {
-			$categorias->nomeCategoria = DB::table('categoria_portfolios')->where('id', $categoria->categoria_portfolio_id)->value('titulo_categoria');
-		}
-    	return $categorias;
+        foreach ($categories as $category) {
+            $category->nomeCategoria = DB::table('categoria_portfolios')
+                ->where('id', $category->categoria_portfolio_id)
+                ->value('titulo_categoria');
+        }
+
+        return $categories;
     }
 
-    public function getPortfolio(){
-    	$portfolio = Portfolio::class;
-    	$data = $portfolio::all()->sortBy('id');
-    	foreach ($data as $key => $value) {
-    		$data[$key]['imagens'] = DB::table('portfolio_images')->where('portfolio_id', $data[$key]['id'])->get();
-    		$data[$key]['categorias'] = DB::table('categoria_portfolio__portfolios')->where('portfolio_id', $data[$key]['id'])->get();
-    		// dd($data[$key]);
-    		foreach ($data[$key]['categorias'] as $key2 => $categoria) {
-    			$data[$key]['categorias'][$key2]->nomeCategoria = DB::table('categoria_portfolios')->where('id', $categoria->categoria_portfolio_id)->value('titulo_categoria');
-    		}
-    	}
+    public function getPortfolio()
+    {
+        $portfolios = Portfolio::all()->sortBy('id')->values();
 
-    	return $data;
+        foreach ($portfolios as $portfolio) {
+            $portfolio->descricao = $this->sanitizeDescription($portfolio->descricao);
+            $portfolio->imagens = DB::table('portfolio_images')
+                ->where('portfolio_id', $portfolio->id)
+                ->get();
+            $portfolio->categorias = DB::table('categoria_portfolio__portfolios')
+                ->where('portfolio_id', $portfolio->id)
+                ->get();
+
+            foreach ($portfolio->categorias as $category) {
+                $category->nomeCategoria = DB::table('categoria_portfolios')
+                    ->where('id', $category->categoria_portfolio_id)
+                    ->value('titulo_categoria');
+            }
+        }
+
+        return $portfolios;
     }
 
-    public function getPortfolioId($id){
-    	$portfolio = Portfolio::class;
-    	$data = $portfolio::find($id);
-    	$data['imagens'] = DB::table('portfolio_images')->where('portfolio_id', $data['id'])->get();
+    public function getPortfolioId($id)
+    {
+        $portfolio = Portfolio::findOrFail($id);
+        $portfolio->descricao = $this->sanitizeDescription($portfolio->descricao);
+        $portfolio->imagens = DB::table('portfolio_images')
+            ->where('portfolio_id', $portfolio->id)
+            ->get();
 
-    	
-    	foreach($data['imagens'] as $key => $imagem){
-    		$data['imagens'][$key]->path = asset('storage/'.$imagem->path);
-    	}
-    	$data['categorias'] = DB::table('categoria_portfolio__portfolios')->where('portfolio_id', $data['id'])->get();
-    	foreach ($data['categorias'] as $key2 => $categoria) {
-			$data['categorias'][$key2]->nomeCategoria = DB::table('categoria_portfolios')->where('id', $categoria->categoria_portfolio_id)->value('titulo_categoria');
-		}
-    	return $data;
+        foreach ($portfolio->imagens as $image) {
+            $image->path = asset('storage/' . $image->path);
+        }
 
+        $portfolio->categorias = DB::table('categoria_portfolio__portfolios')
+            ->where('portfolio_id', $portfolio->id)
+            ->get();
+
+        foreach ($portfolio->categorias as $category) {
+            $category->nomeCategoria = DB::table('categoria_portfolios')
+                ->where('id', $category->categoria_portfolio_id)
+                ->value('titulo_categoria');
+        }
+
+        return $portfolio;
+    }
+
+    private function sanitizeDescription($html)
+    {
+        $allowedTags = '<p><br><strong><b><em><i><u><ul><ol><li><blockquote><h2><h3><h4>';
+        $clean = strip_tags((string) $html, $allowedTags);
+
+        return preg_replace_callback(
+            '/<(\/?)((?:p|br|strong|b|em|i|u|ul|ol|li|blockquote|h[2-4]))\b[^>]*>/i',
+            function ($match) {
+                return '<' . $match[1] . strtolower($match[2]) . '>';
+            },
+            $clean
+        );
     }
 }
